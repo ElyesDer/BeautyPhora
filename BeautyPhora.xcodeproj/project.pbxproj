@@ -16,6 +16,9 @@
 		E9047BA32970519A000B1885 /* BeautyPhoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BA22970519A000B1885 /* BeautyPhoraTests.swift */; };
 		E9047BAD2970519A000B1885 /* BeautyPhoraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BAC2970519A000B1885 /* BeautyPhoraUITests.swift */; };
 		E9047BAF2970519A000B1885 /* BeautyPhoraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BAE2970519A000B1885 /* BeautyPhoraUITestsLaunchTests.swift */; };
+		E9047BBC29705282000B1885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BBB29705282000B1885 /* AppDelegate.swift */; };
+		E9047BBE29705297000B1885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BBD29705297000B1885 /* SceneDelegate.swift */; };
+		E9047BC1297052B5000B1885 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BC0297052B5000B1885 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		E9047BA82970519A000B1885 /* BeautyPhoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeautyPhoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9047BAC2970519A000B1885 /* BeautyPhoraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyPhoraUITests.swift; sourceTree = "<group>"; };
 		E9047BAE2970519A000B1885 /* BeautyPhoraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyPhoraUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E9047BBB29705282000B1885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E9047BBD29705297000B1885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E9047BC0297052B5000B1885 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				E9047B8729705197000B1885 /* BeautyPhoraApp.swift */,
+				E9047BBD29705297000B1885 /* SceneDelegate.swift */,
+				E9047BBB29705282000B1885 /* AppDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -137,6 +145,7 @@
 		E9047B9029705197000B1885 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				E9047BBF297052A6000B1885 /* Home */,
 				E9047B9129705197000B1885 /* ContentView.swift */,
 			);
 			path = Presentation;
@@ -175,6 +184,22 @@
 			path = BeautyPhoraUITests;
 			sourceTree = "<group>";
 		};
+		E9047BBF297052A6000B1885 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BC2297052B8000B1885 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E9047BC2297052B8000B1885 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BC0297052B5000B1885 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -185,6 +210,7 @@
 				E9047B7F29705197000B1885 /* Sources */,
 				E9047B8029705197000B1885 /* Frameworks */,
 				E9047B8129705197000B1885 /* Resources */,
+				E9047BC329705398000B1885 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -300,6 +326,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E9047BC329705398000B1885 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E9047B7F29705197000B1885 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -308,7 +354,10 @@
 				E9047B8829705197000B1885 /* BeautyPhoraApp.swift in Sources */,
 				E9047B8F29705197000B1885 /* BeautyPhora.xcdatamodeld in Sources */,
 				E9047B9229705197000B1885 /* ContentView.swift in Sources */,
+				E9047BBC29705282000B1885 /* AppDelegate.swift in Sources */,
 				E9047B8B29705197000B1885 /* Persistence.swift in Sources */,
+				E9047BC1297052B5000B1885 /* HomeViewController.swift in Sources */,
+				E9047BBE29705297000B1885 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,7 +534,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.homework.BeautyPhora;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -523,7 +574,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.homework.BeautyPhora;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
