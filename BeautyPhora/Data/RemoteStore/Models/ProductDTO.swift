@@ -9,9 +9,9 @@ import Foundation
 
 // MARK: - Product
 
-typealias Products = [Product]
+typealias Products = [ProductDTO]
 
-struct Product: PProduct {
+struct ProductDTO: PProduct {
     var id: Int
     var name: String
     var description: String
@@ -22,7 +22,7 @@ struct Product: PProduct {
     var isSpecialBrand: Bool
 }
 
-extension Product {
+extension ProductDTO {
     
     enum CodingKeys: String, CodingKey {
         case id = "product_id"
@@ -45,7 +45,7 @@ extension Product {
         isProductSet = try values.decode(Bool.self, forKey: .isProductSet)
         isSpecialBrand = try values.decode(Bool.self, forKey: .isSpecialBrand)
         
-        image = try values.decode(ImagesURL.self, forKey: .image)
-        brand = try values.decode(Brand.self, forKey: .brand)
+        image = try values.decode(ImagesURLDTO.self, forKey: .image)
+        brand = try values.decode(BrandDTO.self, forKey: .brand)
     }
 }

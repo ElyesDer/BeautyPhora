@@ -7,12 +7,16 @@
 
 import Foundation
 
-class ProductRepository: ProductRepositoryProtocol, HasProductRemoteStoreProtocol {
+class ProductRepository: ProductRepositoryProtocol, HasProductRemoteStoreProtocol, HasProductDaoStoreProtocol {
     
+    var localStore: ProductDaoStoreProtocol
     var remoteStore: ProductRemoteStoreProtocol
     
-    init(remoteStore: ProductRemoteStoreProtocol) {
-        self.remoteStore = remoteStore
+    typealias Dependencies = HasProductDaoStoreProtocol & HasProductRemoteStoreProtocol
+    
+    init(dependencies: Dependencies) {
+        self.localStore = dependencies.localStore
+        self.remoteStore = dependencies.remoteStore
     }
     
     func getProducts() async throws -> Products {

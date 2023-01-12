@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - ImagesURL
-struct ImagesURL: PImagesURL {
+struct ImagesURLDTO: PImagesURL {
     let small: String
     let large: String
 }
