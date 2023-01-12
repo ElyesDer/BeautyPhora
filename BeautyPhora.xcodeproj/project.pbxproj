@@ -37,6 +37,8 @@
 		E9047BF5297080B6000B1885 /* ProductRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BF4297080B6000B1885 /* ProductRepositoryProtocol.swift */; };
 		E9047BFA29708A5F000B1885 /* ProductDaoStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BF929708A5F000B1885 /* ProductDaoStoreProtocol.swift */; };
 		E9047BFC29708C72000B1885 /* ProductDaoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BFB29708C72000B1885 /* ProductDaoStore.swift */; };
+		E9047BFF29709A4D000B1885 /* LocaleStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BFE29709A4D000B1885 /* LocaleStoreTests.swift */; };
+		E9047C022970B8C6000B1885 /* CoreData+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047C012970B8C6000B1885 /* CoreData+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		E9047BF4297080B6000B1885 /* ProductRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepositoryProtocol.swift; sourceTree = "<group>"; };
 		E9047BF929708A5F000B1885 /* ProductDaoStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDaoStoreProtocol.swift; sourceTree = "<group>"; };
 		E9047BFB29708C72000B1885 /* ProductDaoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDaoStore.swift; sourceTree = "<group>"; };
+		E9047BFE29709A4D000B1885 /* LocaleStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleStoreTests.swift; sourceTree = "<group>"; };
+		E9047C012970B8C6000B1885 /* CoreData+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +258,7 @@
 		E9047BC629705DAA000B1885 /* LocalStore */ = {
 			isa = PBXGroup;
 			children = (
+				E9047C002970B8BD000B1885 /* Shared */,
 				E9047B8C29705197000B1885 /* Database */,
 				E9047B8A29705197000B1885 /* Persistence.swift */,
 				E9047BFB29708C72000B1885 /* ProductDaoStore.swift */,
@@ -313,6 +318,7 @@
 		E9047BD82970684E000B1885 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
+				E9047BFD29709A3B000B1885 /* LocaleStoreTests */,
 				E9047BF6297081E2000B1885 /* RemoteStoreTests */,
 				E9047BDB29706992000B1885 /* Mocks & Stubs */,
 			);
@@ -382,6 +388,22 @@
 				E9047BF929708A5F000B1885 /* ProductDaoStoreProtocol.swift */,
 			);
 			path = DAO;
+			sourceTree = "<group>";
+		};
+		E9047BFD29709A3B000B1885 /* LocaleStoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BFE29709A4D000B1885 /* LocaleStoreTests.swift */,
+			);
+			path = LocaleStoreTests;
+			sourceTree = "<group>";
+		};
+		E9047C002970B8BD000B1885 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E9047C012970B8C6000B1885 /* CoreData+.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,6 +578,7 @@
 				E9047BEB29707DC3000B1885 /* ProductRemoteStore.swift in Sources */,
 				E9047BE229706BE1000B1885 /* BrandDTO.swift in Sources */,
 				E9047BF12970808D000B1885 /* ProductRepository.swift in Sources */,
+				E9047C022970B8C6000B1885 /* CoreData+.swift in Sources */,
 				E9047BD72970660E000B1885 /* ProductDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,6 +590,7 @@
 				E9047BA32970519A000B1885 /* BeautyPhoraTests.swift in Sources */,
 				E9047BDD2970699D000B1885 /* StubsProvider.swift in Sources */,
 				E9047BDA297068B3000B1885 /* RequesterTests.swift in Sources */,
+				E9047BFF29709A4D000B1885 /* LocaleStoreTests.swift in Sources */,
 				E9047BE629706F0B000B1885 /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

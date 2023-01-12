@@ -10,10 +10,11 @@ import CoreData
 
 // swiftlint: disable identifier_name
 
-protocol BaseDao <T, K> {
+protocol BaseDao<T, K> {
     associatedtype T: Decodable
     associatedtype K: NSManagedObject
     
+    var container: NSPersistentContainer { get }
     func encode(entity e: T, into obj: inout K)
     func decode(object o: K) -> T
 }
@@ -23,13 +24,52 @@ class ProductDaoStore: BaseDao, ProductDaoStoreProtocol {
     typealias T = ProductDTO
     typealias K = Product
     
-    func getAllProduct() async throws -> PProducts {
+    let container: NSPersistentContainer
+    
+    enum ProductDaoStoreError: Error {
+        case notFoundError
+        case encodeError
+        case decodeError
+    }
+    
+    init(inMemory: Bool = false, container: NSPersistentContainer = NSPersistentContainer(name: "BeautyPhora")) {
+        self.container = container
+        if inMemory {
+            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        }
+        self.container.loadPersistentStores(completionHandler: { (_, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        self.container.viewContext.automaticallyMergesChangesFromParent = true
+    }
+    
+    func getAllProduct() throws -> PProducts {
         // perform db fetch
-        return []
+        let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
+        return try self.container.viewContext
+            .fetch(fetchRequest)
+            .map {
+                return decode(object: $0)
+            }
+    }
+    
+    func getProduct(id: Int) throws -> PProduct {
+        let fetchRequest: NSFetchRequest<Product> = NSFetchRequest(entityName: "Product")
+        fetchRequest.predicate = NSPredicate(format: "id == %i", id)
+        fetchRequest.fetchLimit = 1
+        guard let product = try self.container.viewContext.fetch(fetchRequest).first else {
+            throw ProductDaoStoreError.notFoundError
+        }
+        return self.decode(object: product)
     }
     
     func save(product: PProduct) throws {
-        
+        var localProduct: Product = .init(context: self.container.viewContext)
+        guard let dto = product as? ProductDTO else { throw NSError() }
+        encode(entity: dto, into: &localProduct)
+        try self.container.viewContext.saveIfNeeded()
     }
     
     // MARK: - Mapping DTO to managed objects
@@ -42,7 +82,7 @@ class ProductDaoStore: BaseDao, ProductDaoStoreProtocol {
         obj.isProductSet = e.isProductSet
         obj.price = Int32(e.price)
         
-        let brand = Brand()
+        let brand = Brand(context: self.container.viewContext)
         brand.id = e.brand.id
         brand.bName = e.brand.name
         
