@@ -19,6 +19,18 @@
 		E9047BBC29705282000B1885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BBB29705282000B1885 /* AppDelegate.swift */; };
 		E9047BBE29705297000B1885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BBD29705297000B1885 /* SceneDelegate.swift */; };
 		E9047BC1297052B5000B1885 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BC0297052B5000B1885 /* HomeViewController.swift */; };
+		E9047BCC29705DF8000B1885 /* DataServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BCB29705DF8000B1885 /* DataServiceProvider.swift */; };
+		E9047BCE29705E17000B1885 /* NetworkProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BCD29705E17000B1885 /* NetworkProviderProtocol.swift */; };
+		E9047BD029705EB1000B1885 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BCF29705EB1000B1885 /* APIProvider.swift */; };
+		E9047BD22970654A000B1885 /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BD12970654A000B1885 /* Requester.swift */; };
+		E9047BD42970656A000B1885 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BD32970656A000B1885 /* Endpoint.swift */; };
+		E9047BD72970660E000B1885 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BD62970660E000B1885 /* Product.swift */; };
+		E9047BDA297068B3000B1885 /* RequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BD9297068B3000B1885 /* RequesterTests.swift */; };
+		E9047BDD2970699D000B1885 /* StubsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BDC2970699D000B1885 /* StubsProvider.swift */; };
+		E9047BE029706B3A000B1885 /* PProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BDF29706B3A000B1885 /* PProduct.swift */; };
+		E9047BE229706BE1000B1885 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BE129706BE1000B1885 /* Brand.swift */; };
+		E9047BE429706C05000B1885 /* PPImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BE329706C05000B1885 /* PPImage.swift */; };
+		E9047BE629706F0B000B1885 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BE529706F0B000B1885 /* MockURLProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +68,18 @@
 		E9047BBD29705297000B1885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E9047BC0297052B5000B1885 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E9047BC429705D50000B1885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E9047BCB29705DF8000B1885 /* DataServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceProvider.swift; sourceTree = "<group>"; };
+		E9047BCD29705E17000B1885 /* NetworkProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderProtocol.swift; sourceTree = "<group>"; };
+		E9047BCF29705EB1000B1885 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
+		E9047BD12970654A000B1885 /* Requester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requester.swift; sourceTree = "<group>"; };
+		E9047BD32970656A000B1885 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E9047BD62970660E000B1885 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E9047BD9297068B3000B1885 /* RequesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequesterTests.swift; sourceTree = "<group>"; };
+		E9047BDC2970699D000B1885 /* StubsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubsProvider.swift; sourceTree = "<group>"; };
+		E9047BDF29706B3A000B1885 /* PProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PProduct.swift; sourceTree = "<group>"; };
+		E9047BE129706BE1000B1885 /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		E9047BE329706C05000B1885 /* PPImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPImage.swift; sourceTree = "<group>"; };
+		E9047BE529706F0B000B1885 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +130,10 @@
 		E9047B8529705197000B1885 /* BeautyPhora */ = {
 			isa = PBXGroup;
 			children = (
-				E9047BC429705D50000B1885 /* Info.plist */,
 				E9047B962970519A000B1885 /* BeautyPhora.entitlements */,
+				E9047BC429705D50000B1885 /* Info.plist */,
 				E9047B8629705197000B1885 /* Application */,
+				E9047BC829705DD5000B1885 /* Domain */,
 				E9047B8929705197000B1885 /* Data */,
 				E9047B9029705197000B1885 /* Presentation */,
 				E9047B932970519A000B1885 /* Resources */,
@@ -130,8 +155,9 @@
 		E9047B8929705197000B1885 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				E9047B8A29705197000B1885 /* Persistence.swift */,
-				E9047B8C29705197000B1885 /* Database */,
+				E9047BD5297065EB000B1885 /* Models */,
+				E9047BC629705DAA000B1885 /* LocalStore */,
+				E9047BC529705DA3000B1885 /* RemoteStore */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -172,6 +198,7 @@
 		E9047BA12970519A000B1885 /* BeautyPhoraTests */ = {
 			isa = PBXGroup;
 			children = (
+				E9047BD82970684E000B1885 /* NetworkLayerTests */,
 				E9047BA22970519A000B1885 /* BeautyPhoraTests.swift */,
 			);
 			path = BeautyPhoraTests;
@@ -200,6 +227,95 @@
 				E9047BC0297052B5000B1885 /* HomeViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E9047BC529705DA3000B1885 /* RemoteStore */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BC729705DB6000B1885 /* Network */,
+			);
+			path = RemoteStore;
+			sourceTree = "<group>";
+		};
+		E9047BC629705DAA000B1885 /* LocalStore */ = {
+			isa = PBXGroup;
+			children = (
+				E9047B8C29705197000B1885 /* Database */,
+				E9047B8A29705197000B1885 /* Persistence.swift */,
+			);
+			path = LocalStore;
+			sourceTree = "<group>";
+		};
+		E9047BC729705DB6000B1885 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BCF29705EB1000B1885 /* APIProvider.swift */,
+				E9047BD12970654A000B1885 /* Requester.swift */,
+				E9047BD32970656A000B1885 /* Endpoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E9047BC829705DD5000B1885 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BDE29706A5A000B1885 /* Entities */,
+				E9047BC929705DDE000B1885 /* RemoteStore */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E9047BC929705DDE000B1885 /* RemoteStore */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BCA29705DE3000B1885 /* Network */,
+			);
+			path = RemoteStore;
+			sourceTree = "<group>";
+		};
+		E9047BCA29705DE3000B1885 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BCB29705DF8000B1885 /* DataServiceProvider.swift */,
+				E9047BCD29705E17000B1885 /* NetworkProviderProtocol.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E9047BD5297065EB000B1885 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BD62970660E000B1885 /* Product.swift */,
+				E9047BE129706BE1000B1885 /* Brand.swift */,
+				E9047BE329706C05000B1885 /* PPImage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E9047BD82970684E000B1885 /* NetworkLayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BDB29706992000B1885 /* Mocks & Stubs */,
+				E9047BD9297068B3000B1885 /* RequesterTests.swift */,
+			);
+			path = NetworkLayerTests;
+			sourceTree = "<group>";
+		};
+		E9047BDB29706992000B1885 /* Mocks & Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BDC2970699D000B1885 /* StubsProvider.swift */,
+				E9047BE529706F0B000B1885 /* MockURLProtocol.swift */,
+			);
+			path = "Mocks & Stubs";
+			sourceTree = "<group>";
+		};
+		E9047BDE29706A5A000B1885 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BDF29706B3A000B1885 /* PProduct.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,11 +471,20 @@
 			files = (
 				E9047B8829705197000B1885 /* BeautyPhoraApp.swift in Sources */,
 				E9047B8F29705197000B1885 /* BeautyPhora.xcdatamodeld in Sources */,
+				E9047BCE29705E17000B1885 /* NetworkProviderProtocol.swift in Sources */,
+				E9047BCC29705DF8000B1885 /* DataServiceProvider.swift in Sources */,
+				E9047BE029706B3A000B1885 /* PProduct.swift in Sources */,
 				E9047B9229705197000B1885 /* ContentView.swift in Sources */,
 				E9047BBC29705282000B1885 /* AppDelegate.swift in Sources */,
 				E9047B8B29705197000B1885 /* Persistence.swift in Sources */,
+				E9047BD029705EB1000B1885 /* APIProvider.swift in Sources */,
 				E9047BC1297052B5000B1885 /* HomeViewController.swift in Sources */,
+				E9047BD22970654A000B1885 /* Requester.swift in Sources */,
+				E9047BE429706C05000B1885 /* PPImage.swift in Sources */,
+				E9047BD42970656A000B1885 /* Endpoint.swift in Sources */,
 				E9047BBE29705297000B1885 /* SceneDelegate.swift in Sources */,
+				E9047BE229706BE1000B1885 /* Brand.swift in Sources */,
+				E9047BD72970660E000B1885 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +493,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9047BA32970519A000B1885 /* BeautyPhoraTests.swift in Sources */,
+				E9047BDD2970699D000B1885 /* StubsProvider.swift in Sources */,
+				E9047BDA297068B3000B1885 /* RequesterTests.swift in Sources */,
+				E9047BE629706F0B000B1885 /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
