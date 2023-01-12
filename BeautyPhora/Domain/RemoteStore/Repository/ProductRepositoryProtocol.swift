@@ -1,0 +1,16 @@
+//
+//  ProductRepositoryProtocol.swift
+//  BeautyPhora
+//
+//  Created by Derouiche Elyes on 12/01/2023.
+//
+
+import Foundation
+
+protocol HasProductRepositoryProtocol {
+    var productRepository: ProductRepositoryProtocol { get }
+}
+
+protocol ProductRepositoryProtocol {
+    func getProducts() async throws -> Products
+}

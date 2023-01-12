@@ -31,6 +31,10 @@
 		E9047BE229706BE1000B1885 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BE129706BE1000B1885 /* Brand.swift */; };
 		E9047BE429706C05000B1885 /* PPImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BE329706C05000B1885 /* PPImage.swift */; };
 		E9047BE629706F0B000B1885 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BE529706F0B000B1885 /* MockURLProtocol.swift */; };
+		E9047BEB29707DC3000B1885 /* ProductRemoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BEA29707DC3000B1885 /* ProductRemoteStore.swift */; };
+		E9047BED29707DD1000B1885 /* ProductRemoteStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BEC29707DD1000B1885 /* ProductRemoteStoreProtocol.swift */; };
+		E9047BF12970808D000B1885 /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BF02970808D000B1885 /* ProductRepository.swift */; };
+		E9047BF5297080B6000B1885 /* ProductRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BF4297080B6000B1885 /* ProductRepositoryProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,10 @@
 		E9047BE129706BE1000B1885 /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
 		E9047BE329706C05000B1885 /* PPImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPImage.swift; sourceTree = "<group>"; };
 		E9047BE529706F0B000B1885 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		E9047BEA29707DC3000B1885 /* ProductRemoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRemoteStore.swift; sourceTree = "<group>"; };
+		E9047BEC29707DD1000B1885 /* ProductRemoteStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRemoteStoreProtocol.swift; sourceTree = "<group>"; };
+		E9047BF02970808D000B1885 /* ProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
+		E9047BF4297080B6000B1885 /* ProductRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepositoryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +206,7 @@
 		E9047BA12970519A000B1885 /* BeautyPhoraTests */ = {
 			isa = PBXGroup;
 			children = (
-				E9047BD82970684E000B1885 /* NetworkLayerTests */,
+				E9047BD82970684E000B1885 /* DataTests */,
 				E9047BA22970519A000B1885 /* BeautyPhoraTests.swift */,
 			);
 			path = BeautyPhoraTests;
@@ -232,6 +240,8 @@
 		E9047BC529705DA3000B1885 /* RemoteStore */ = {
 			isa = PBXGroup;
 			children = (
+				E9047BEF29708080000B1885 /* Repository */,
+				E9047BEE29708078000B1885 /* Store */,
 				E9047BC729705DB6000B1885 /* Network */,
 			);
 			path = RemoteStore;
@@ -268,6 +278,8 @@
 		E9047BC929705DDE000B1885 /* RemoteStore */ = {
 			isa = PBXGroup;
 			children = (
+				E9047BF3297080A6000B1885 /* Repository */,
+				E9047BF2297080A1000B1885 /* Store */,
 				E9047BCA29705DE3000B1885 /* Network */,
 			);
 			path = RemoteStore;
@@ -292,13 +304,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		E9047BD82970684E000B1885 /* NetworkLayerTests */ = {
+		E9047BD82970684E000B1885 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
+				E9047BF6297081E2000B1885 /* RemoteStoreTests */,
 				E9047BDB29706992000B1885 /* Mocks & Stubs */,
-				E9047BD9297068B3000B1885 /* RequesterTests.swift */,
 			);
-			path = NetworkLayerTests;
+			path = DataTests;
 			sourceTree = "<group>";
 		};
 		E9047BDB29706992000B1885 /* Mocks & Stubs */ = {
@@ -316,6 +328,46 @@
 				E9047BDF29706B3A000B1885 /* PProduct.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		E9047BEE29708078000B1885 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BEA29707DC3000B1885 /* ProductRemoteStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		E9047BEF29708080000B1885 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BF02970808D000B1885 /* ProductRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		E9047BF2297080A1000B1885 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BEC29707DD1000B1885 /* ProductRemoteStoreProtocol.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		E9047BF3297080A6000B1885 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BF4297080B6000B1885 /* ProductRepositoryProtocol.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		E9047BF6297081E2000B1885 /* RemoteStoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				E9047BD9297068B3000B1885 /* RequesterTests.swift */,
+			);
+			path = RemoteStoreTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9047BED29707DD1000B1885 /* ProductRemoteStoreProtocol.swift in Sources */,
 				E9047B8829705197000B1885 /* BeautyPhoraApp.swift in Sources */,
 				E9047B8F29705197000B1885 /* BeautyPhora.xcdatamodeld in Sources */,
 				E9047BCE29705E17000B1885 /* NetworkProviderProtocol.swift in Sources */,
@@ -477,13 +530,16 @@
 				E9047B9229705197000B1885 /* ContentView.swift in Sources */,
 				E9047BBC29705282000B1885 /* AppDelegate.swift in Sources */,
 				E9047B8B29705197000B1885 /* Persistence.swift in Sources */,
+				E9047BF5297080B6000B1885 /* ProductRepositoryProtocol.swift in Sources */,
 				E9047BD029705EB1000B1885 /* APIProvider.swift in Sources */,
 				E9047BC1297052B5000B1885 /* HomeViewController.swift in Sources */,
 				E9047BD22970654A000B1885 /* Requester.swift in Sources */,
 				E9047BE429706C05000B1885 /* PPImage.swift in Sources */,
 				E9047BD42970656A000B1885 /* Endpoint.swift in Sources */,
 				E9047BBE29705297000B1885 /* SceneDelegate.swift in Sources */,
+				E9047BEB29707DC3000B1885 /* ProductRemoteStore.swift in Sources */,
 				E9047BE229706BE1000B1885 /* Brand.swift in Sources */,
+				E9047BF12970808D000B1885 /* ProductRepository.swift in Sources */,
 				E9047BD72970660E000B1885 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

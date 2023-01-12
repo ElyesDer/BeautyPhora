@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias PProducts = [PProduct]
+
 protocol PProduct: Decodable {
     var id: Int { get }
     var name: String { get }
