@@ -10,7 +10,7 @@ import Foundation
 typealias PProducts = [PProduct]
 
 protocol PProduct: Decodable {
-    var id: Int { get }
+    var id: String { get }
     var name: String { get }
     var description: String { get }
     var price: Int { get }
