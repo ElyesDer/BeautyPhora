@@ -28,7 +28,7 @@ class StubProvider {
     private init() {
         for _ in 0...5 {
             products.append(
-                ProductDTO(id: Int.random(in: 0...100), name: "productName-\(Int.random(in: 0...100))", description: "description-\(Int.random(in: 0...100))", price: Int.random(in: 0...200), image: ImagesURLDTO(small: "https://dev.sephora.fr/on/demandware.static/-/Library-Sites-SephoraV2/default/dw521a3f33/brands/institbanner/SEPHO_900_280_institutional_banner_20210927_V2.jpg", large: ""), brand: BrandDTO(id: "id-\(Int.random(in: 0...10))", name: "name-\(Int.random(in: 0...100))"), isProductSet: Bool.random(), isSpecialBrand: Bool.random()))
+                ProductDTO(id: String(Int.random(in: 0...100)), name: "productName-\(Int.random(in: 0...100))", description: "description-\(Int.random(in: 0...100))", price: Int.random(in: 0...200), image: ImagesURLDTO(small: "https://dev.sephora.fr/on/demandware.static/-/Library-Sites-SephoraV2/default/dw521a3f33/brands/institbanner/SEPHO_900_280_institutional_banner_20210927_V2.jpg", large: ""), brand: BrandDTO(id: "id-\(Int.random(in: 0...10))", name: "name-\(Int.random(in: 0...100))"), isProductSet: Bool.random(), isSpecialBrand: Bool.random()))
         }
         
         productEndpoints

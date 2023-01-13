@@ -12,7 +12,7 @@ import Foundation
 typealias Products = [ProductDTO]
 
 struct ProductDTO: PProduct {
-    var id: Int
+    var id: String
     var name: String
     var description: String
     var price: Int
@@ -38,7 +38,7 @@ extension ProductDTO {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = try values.decode(Int.self, forKey: .id)
+        id = String(try values.decode(Int.self, forKey: .id))
         name = try values.decode(String.self, forKey: .name)
         description = try values.decode(String.self, forKey: .description)
         price = try values.decode(Int.self, forKey: .price)

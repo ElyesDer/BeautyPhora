@@ -47,15 +47,13 @@ class ProductDaoStore: BaseDao, ProductDaoStoreProtocol {
     }
     
     func performUpdates(with products: Products) {
-//        products.forEach { product in
-//            remove(with: product.id)
-//            print("inserting \(product.id)")
-//            try? insert(product: product)
-//        }
         removeAll(in: "Product")
-        products.forEach { product in
-            try? insert(product: product)
+        DispatchQueue.main.async {
+            products.forEach { product in
+                try? self.insert(product: product)
+            }
         }
+        
     }
     
     func removeAll(in entity : String) {
@@ -103,7 +101,7 @@ class ProductDaoStore: BaseDao, ProductDaoStoreProtocol {
     // MARK: - Mapping DTO to managed objects
     
     func encode(entity e: ProductDTO, into obj: inout Product) {
-        obj.id = Int32(e.id)
+        obj.id = String(e.id)
         obj.pName = e.name
         obj.pDescription = e.description
         obj.isSpecialBrand = e.isSpecialBrand
@@ -119,7 +117,7 @@ class ProductDaoStore: BaseDao, ProductDaoStoreProtocol {
     
     func decode(object o: Product) -> ProductDTO {
         return ProductDTO(
-            id: Int(o.id),
+            id: o.id ?? "",
             name: o.pName ?? "",
             description: o.pDescription ?? "",
             price: Int(o.price),
