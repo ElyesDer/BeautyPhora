@@ -24,7 +24,40 @@ class ProductCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
+    lazy var contentStackView: UIStackView = {
+        let stackView: UIStackView = .init()
+        
+        // setup stackview
+        stackView.axis = .vertical
+        stackView.spacing = 1
+        stackView.distribution = .fill
+        stackView.layoutMargins = UIEdgeInsets(top: 10, left: 8, bottom: 0, right: 8)
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
     let productLabel: UILabel = {
+        let label: UILabel = .init()
+        label.sizeToFit()
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 11, weight: .regular)
+        label.numberOfLines = 2
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let descriptionLabel: UILabel = {
+        let label: UILabel = .init()
+        label.sizeToFit()
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 9, weight: .thin)
+        label.numberOfLines = 3
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let priceLabel: UILabel = {
         let label: UILabel = .init()
         label.sizeToFit()
         label.textAlignment = .left
@@ -52,20 +85,13 @@ class ProductCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(container)
         
         container.addSubview(imageView)
-        container.addSubview(productLabel)
+        container.addSubview(contentStackView)
         
-        //        contentView.debugView(color: .lightGray)
+        contentStackView.addArrangedSubview(priceLabel)
+        contentStackView.addArrangedSubview(productLabel)
+        contentStackView.addArrangedSubview(descriptionLabel)
         
-    }
-    
-    fileprivate func setupShadowEffect(on view: UIView) {
-        view.backgroundColor = .systemBackground
-        view.layer.shadowRadius = 10
-        view.layer.shadowOffset = CGSize(width: 0, height: 10) // .zero
-        view.layer.shadowOpacity = 0.2
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
-        view.layer.masksToBounds = false
+        contentStackView.backgroundColor = .white.withAlphaComponent(0.3)
     }
     
     fileprivate func setupConstraint() {
@@ -74,15 +100,15 @@ class ProductCollectionViewCell: UICollectionViewCell {
         imageView.anchor(top: container.topAnchor, leading: container.leadingAnchor, bottom: nil, trailing: container.trailingAnchor,
                          padding: .init(top: 4, left: 8, bottom: 4, right: 8))
         
-        productLabel.anchor(top: nil,
+        contentStackView.anchor(top: nil,
                             leading: container.leadingAnchor,
                             bottom: container.bottomAnchor,
                             trailing: container.trailingAnchor,
                             padding: .init(top: 4, left: 8, bottom: 8, right: 8))
         
         NSLayoutConstraint.activate([
-            imageView.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 0.7),
-            productLabel.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 0.3)
+            imageView.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 1),
+            contentStackView.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 0.4)
         ])
     }
     
@@ -92,6 +118,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
             return
         }
         productLabel.text = model.name
+        descriptionLabel.text = model.description
+        priceLabel.text = String(model.price)
         imageView.imageFromServerURL(model.image.small, placeHolder: .init(named: "im_default"))
     }
     

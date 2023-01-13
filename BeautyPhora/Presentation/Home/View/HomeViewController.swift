@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxRelay
 import RxCocoa
+import RxDataSources
 
 class HomeViewController: UIViewController {
     
@@ -18,28 +19,14 @@ class HomeViewController: UIViewController {
     
     // MARK: - Views
     
-    lazy var collectionViewLayout: UICollectionViewLayout = {
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.collectionView?.allowsSelection = true
-        layout.itemSize = Dimensions.photosItemSize
-        let numberOfCellsInRow = floor(Dimensions.screenWidth / Dimensions.photosItemSize.width)
-        let inset = (Dimensions.screenWidth - (numberOfCellsInRow * Dimensions.photosItemSize.width)) / (numberOfCellsInRow + 1)
-        layout.sectionInset = .init(top: inset,
-                                    left: inset,
-                                    bottom: inset,
-                                    right: inset)
-        return layout
-        
-    }()
-    
     lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
         collectionView.backgroundColor = .white
         collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.alwaysBounceVertical = true
+        
+        collectionView.rx.setDelegate(self).disposed(by: disposeBag)
         return collectionView
     }()
     
@@ -103,42 +90,61 @@ extension HomeViewController {
     }
 }
 
-// MARK: - Setup ViewController
+// MARK: - Setup UICollectionView
 
-extension HomeViewController {
-    
-    //    private func setupCollectionView() {
-    //        self.view.addSubview(collectionView)
-    //
-    //        NSLayoutConstraint.activate([
-    //            collectionView.leftAnchor
-    //                .constraint(equalTo: self.view.leftAnchor),
-    //            collectionView.topAnchor
-    //                .constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-    //            collectionView.rightAnchor
-    //                .constraint(equalTo: self.view.rightAnchor),
-    //            collectionView.bottomAnchor
-    //                .constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
-    //        ])
-    //
-    //
-    //        collectionView.register(PhotoCollectionViewCell.nib(),
-    //                                forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
-    //    }
-    
-    //    func createCollectionViewLayout() -> UICollectionViewFlowLayout {
-    //        let layout = UICollectionViewFlowLayout()
-    //        layout.scrollDirection = .vertical
-    //        layout.collectionView?.allowsSelection = true
-    //        layout.itemSize = Dimensions.photosItemSize
-    //        let numberOfCellsInRow = floor(Dimensions.screenWidth / Dimensions.photosItemSize.width)
-    //        let inset = (Dimensions.screenWidth - (numberOfCellsInRow * Dimensions.photosItemSize.width)) / (numberOfCellsInRow + 1)
-    //        layout.sectionInset = .init(top: inset,
-    //                                    left: inset,
-    //                                    bottom: inset,
-    //                                    right: inset)
-    //        return layout
-    //    }
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    private func createCollectionViewLayout() -> UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout { (section, _) -> NSCollectionLayoutSection? in
+            if section == 0 {
+                // item
+                let item = NSCollectionLayoutItem(
+                    layoutSize: NSCollectionLayoutSize(
+                        widthDimension: .fractionalWidth(1),
+                        heightDimension: .fractionalHeight(1)
+                    )
+                )
+                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8)
+                
+                // group
+                let group = NSCollectionLayoutGroup.horizontal(
+                    layoutSize: NSCollectionLayoutSize(
+                        widthDimension: .fractionalWidth(1),
+                        heightDimension: .fractionalWidth(0.6)
+                    ),
+                    subitem: item,
+                    count: 1
+                )
+                group.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0)
+                
+                // section
+                let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .continuous
+                section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
+                
+                // return
+                return section
+                
+            } else if section == 1 {
+                
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                      heightDimension: .fractionalHeight(1.0))
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                       heightDimension: .fractionalWidth(0.6))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+                let spacing = CGFloat(10)
+                group.interItemSpacing = .fixed(spacing)
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.interGroupSpacing = spacing
+                section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
+                
+                return section
+            }
+            return nil
+        }
+    }
 }
 
 // MARK: - Bind ViewModel To UI
@@ -146,88 +152,15 @@ extension HomeViewController {
     
     private func bindCollectionView() {
         
-        viewModel.productList
-            .filter({ !$0.isEmpty })
-            .bind(to: collectionView.rx
-                .items(cellIdentifier: ProductCollectionViewCell.identifier,
-                       cellType: ProductCollectionViewCell.self)) { _, _, _ in}
+        let dataSource = RxCollectionViewSectionedReloadDataSource<SectionViewModel> { _, collectionView, indexPath, item in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as? ProductCollectionViewCell
+            cell?.setup(model: item)
+            return cell ?? .init()
+        }
+        
+        viewModel.sectionModels
+            .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
-        collectionView.rx.willDisplayCell
-            .observe(on: MainScheduler.instance)
-            .compactMap({ ($0.cell as? ProductCollectionViewCell, $0.at.item) })
-            .subscribe { [weak self] cell, indexPath in
-                guard let self = self else { return }
-                
-                print("rendeering indexPath: ", indexPath)
-                cell?.setup(model: self.viewModel.productList.value[indexPath])
-                
-                //                if let cachedImage = self.cachedImages[indexPath] {
-                //                    /// use image from cached images
-                //                    cell.imageView.image = cachedImage
-                //                } else {
-                //                    /// start animation for download image
-                //                    cell.activityIndicator.startAnimating()
-                //                    cell.imageView.image = nil
-                //
-                //                    /// download image
-                //                    self.viewModel.loadImageFromGivenItem(with: indexPath)
-                //                }
-                
-            }
-            .disposed(by: disposeBag)
-        
-        //        // MARK: Bind selected model
-        /// showing full screen when image clicked
-        //        collectionView.rx.itemSelected
-        //            .map({ $0.item })
-        //            .subscribe { [weak self] indexPath in
-        //                let row = indexPath.element ?? 0
-        //
-        //                if let cell = self?.collectionView.cellForItem(at: IndexPath(item: row, section: 0) ) as? PhotoCollectionViewCell {
-        //                    let configuration = ImageViewerConfiguration { config in
-        //                        config.imageView = cell.imageView
-        //                    }
-        //
-        //                    let imageViewerController = ImageViewerController(configuration: configuration)
-        //
-        //                    self?.present(imageViewerController, animated: true)
-        //                }
-        //            }
-        //            .disposed(by: disposeBag)
-        
-        //        // MARK: Trigger scroll view when ended
-        //        collectionView.rx.willDisplayCell
-        //            .filter({
-        //                let currentSection = $0.at.section
-        //                let currentItem    = $0.at.row
-        //                let allCellSection = self.collectionView.numberOfSections
-        //                let numberOfItem   = self.collectionView.numberOfItems(inSection: currentSection)
-        //
-        //                return currentSection == allCellSection - 1
-        //                                        &&
-        //                       currentItem >= numberOfItem - 1
-        //            })
-        //            .map({ _ in () })
-        //            .bind(to: viewModel.scrollEnded)
-        //            .disposed(by: disposeBag)
     }
-    
-    /// bind loaded image to cell
-    //    private func bindImageLoader() {
-    //        viewModel.imageDownloaded
-    //            .observeOn(MainScheduler.instance)
-    //            .filter({ $0.1 != nil })
-    //            .map({ ($0.0, $0.1!) })
-    //            .subscribe(onNext: { [unowned self] index, image in
-    //                guard let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as? PhotoCollectionViewCell else {
-    //                    return
-    //                }
-    //
-    //                cell.animateCellWithImage(cell, image)
-    //
-    //                self.cachedImages[index] = image
-    //            })
-    //            .disposed(by: disposeBag)
-    //    }
 }
