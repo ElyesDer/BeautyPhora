@@ -44,7 +44,6 @@ extension ProductDTO {
         price = try values.decode(Int.self, forKey: .price)
         isProductSet = try values.decode(Bool.self, forKey: .isProductSet)
         isSpecialBrand = try values.decode(Bool.self, forKey: .isSpecialBrand)
-        
         image = try values.decode(ImagesURLDTO.self, forKey: .image)
         brand = try values.decode(BrandDTO.self, forKey: .brand)
     }

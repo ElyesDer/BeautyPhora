@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ED7DCFA56C80D1E7B3D663D /* Pods_BeautyPhora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87110A6F781D8A15C2E51913 /* Pods_BeautyPhora.framework */; };
+		3BC1F7D79712BAF99C688970 /* Pods_BeautyPhora_BeautyPhoraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D37C57616497545322A498 /* Pods_BeautyPhora_BeautyPhoraUITests.framework */; };
+		7CD9F6F6FE5A5AB3D554AFDB /* Pods_BeautyPhoraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA57967D20AFAEC622A21F3 /* Pods_BeautyPhoraTests.framework */; };
 		E9047B8829705197000B1885 /* BeautyPhoraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047B8729705197000B1885 /* BeautyPhoraApp.swift */; };
 		E9047B8B29705197000B1885 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047B8A29705197000B1885 /* Persistence.swift */; };
 		E9047B8F29705197000B1885 /* BeautyPhora.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9047B8D29705197000B1885 /* BeautyPhora.xcdatamodeld */; };
@@ -29,7 +32,7 @@
 		E9047BDD2970699D000B1885 /* StubsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BDC2970699D000B1885 /* StubsProvider.swift */; };
 		E9047BE029706B3A000B1885 /* PProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BDF29706B3A000B1885 /* PProduct.swift */; };
 		E9047BE229706BE1000B1885 /* BrandDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BE129706BE1000B1885 /* BrandDTO.swift */; };
-		E9047BE429706C05000B1885 /* PPImageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BE329706C05000B1885 /* PPImageDTO.swift */; };
+		E9047BE429706C05000B1885 /* ImagesURLDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BE329706C05000B1885 /* ImagesURLDTO.swift */; };
 		E9047BE629706F0B000B1885 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BE529706F0B000B1885 /* MockURLProtocol.swift */; };
 		E9047BEB29707DC3000B1885 /* ProductRemoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BEA29707DC3000B1885 /* ProductRemoteStore.swift */; };
 		E9047BED29707DD1000B1885 /* ProductRemoteStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BEC29707DD1000B1885 /* ProductRemoteStoreProtocol.swift */; };
@@ -39,6 +42,8 @@
 		E9047BFC29708C72000B1885 /* ProductDaoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BFB29708C72000B1885 /* ProductDaoStore.swift */; };
 		E9047BFF29709A4D000B1885 /* LocaleStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BFE29709A4D000B1885 /* LocaleStoreTests.swift */; };
 		E9047C022970B8C6000B1885 /* CoreData+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047C012970B8C6000B1885 /* CoreData+.swift */; };
+		E98C99162970D48100439B3D /* RemoteStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C99152970D48100439B3D /* RemoteStoreTests.swift */; };
+		E98C99192970E8A700439B3D /* ProductRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C99182970E8A700439B3D /* ProductRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		079CEE34382B684F4FE4BBE8 /* Pods-BeautyPhora.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyPhora.release.xcconfig"; path = "Target Support Files/Pods-BeautyPhora/Pods-BeautyPhora.release.xcconfig"; sourceTree = "<group>"; };
+		1034F55851ADD13D744377AA /* Pods-BeautyPhora-BeautyPhoraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyPhora-BeautyPhoraUITests.release.xcconfig"; path = "Target Support Files/Pods-BeautyPhora-BeautyPhoraUITests/Pods-BeautyPhora-BeautyPhoraUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2870451DE4D4C8B97765941A /* Pods-BeautyPhoraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyPhoraTests.debug.xcconfig"; path = "Target Support Files/Pods-BeautyPhoraTests/Pods-BeautyPhoraTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BA57967D20AFAEC622A21F3 /* Pods_BeautyPhoraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautyPhoraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60AB9F1CD7DE3875D6518750 /* Pods-BeautyPhora-BeautyPhoraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyPhora-BeautyPhoraUITests.debug.xcconfig"; path = "Target Support Files/Pods-BeautyPhora-BeautyPhoraUITests/Pods-BeautyPhora-BeautyPhoraUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		72D37C57616497545322A498 /* Pods_BeautyPhora_BeautyPhoraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautyPhora_BeautyPhoraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		730E0F285DF32F1CD85AB167 /* Pods-BeautyPhora.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyPhora.debug.xcconfig"; path = "Target Support Files/Pods-BeautyPhora/Pods-BeautyPhora.debug.xcconfig"; sourceTree = "<group>"; };
+		87110A6F781D8A15C2E51913 /* Pods_BeautyPhora.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautyPhora.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB1805E536EF40F6F5924D1A /* Pods-BeautyPhoraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyPhoraTests.release.xcconfig"; path = "Target Support Files/Pods-BeautyPhoraTests/Pods-BeautyPhoraTests.release.xcconfig"; sourceTree = "<group>"; };
 		E9047B8329705197000B1885 /* BeautyPhora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyPhora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9047B8729705197000B1885 /* BeautyPhoraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyPhoraApp.swift; sourceTree = "<group>"; };
 		E9047B8A29705197000B1885 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -86,7 +100,7 @@
 		E9047BDC2970699D000B1885 /* StubsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubsProvider.swift; sourceTree = "<group>"; };
 		E9047BDF29706B3A000B1885 /* PProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PProduct.swift; sourceTree = "<group>"; };
 		E9047BE129706BE1000B1885 /* BrandDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandDTO.swift; sourceTree = "<group>"; };
-		E9047BE329706C05000B1885 /* PPImageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPImageDTO.swift; sourceTree = "<group>"; };
+		E9047BE329706C05000B1885 /* ImagesURLDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesURLDTO.swift; sourceTree = "<group>"; };
 		E9047BE529706F0B000B1885 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		E9047BEA29707DC3000B1885 /* ProductRemoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRemoteStore.swift; sourceTree = "<group>"; };
 		E9047BEC29707DD1000B1885 /* ProductRemoteStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRemoteStoreProtocol.swift; sourceTree = "<group>"; };
@@ -96,6 +110,10 @@
 		E9047BFB29708C72000B1885 /* ProductDaoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDaoStore.swift; sourceTree = "<group>"; };
 		E9047BFE29709A4D000B1885 /* LocaleStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleStoreTests.swift; sourceTree = "<group>"; };
 		E9047C012970B8C6000B1885 /* CoreData+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData+.swift"; sourceTree = "<group>"; };
+		E98C99152970D48100439B3D /* RemoteStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStoreTests.swift; sourceTree = "<group>"; };
+		E98C99182970E8A700439B3D /* ProductRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepositoryTests.swift; sourceTree = "<group>"; };
+		E9B5A5AF29716B4700DCFF0A /* BeautyPhora 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BeautyPhora 2.xcdatamodel"; sourceTree = "<group>"; };
+		E9B5A5B029716E7300DCFF0A /* BeautyPhora 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BeautyPhora 3.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ED7DCFA56C80D1E7B3D663D /* Pods_BeautyPhora.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CD9F6F6FE5A5AB3D554AFDB /* Pods_BeautyPhoraTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,12 +137,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BC1F7D79712BAF99C688970 /* Pods_BeautyPhora_BeautyPhoraUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A339528DA177A025E5D8CA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				730E0F285DF32F1CD85AB167 /* Pods-BeautyPhora.debug.xcconfig */,
+				079CEE34382B684F4FE4BBE8 /* Pods-BeautyPhora.release.xcconfig */,
+				60AB9F1CD7DE3875D6518750 /* Pods-BeautyPhora-BeautyPhoraUITests.debug.xcconfig */,
+				1034F55851ADD13D744377AA /* Pods-BeautyPhora-BeautyPhoraUITests.release.xcconfig */,
+				2870451DE4D4C8B97765941A /* Pods-BeautyPhoraTests.debug.xcconfig */,
+				DB1805E536EF40F6F5924D1A /* Pods-BeautyPhoraTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2CCEA26AC31C17B73B082FE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87110A6F781D8A15C2E51913 /* Pods_BeautyPhora.framework */,
+				72D37C57616497545322A498 /* Pods_BeautyPhora_BeautyPhoraUITests.framework */,
+				5BA57967D20AFAEC622A21F3 /* Pods_BeautyPhoraTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E9047B7A29705197000B1885 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +174,8 @@
 				E9047BA12970519A000B1885 /* BeautyPhoraTests */,
 				E9047BAB2970519A000B1885 /* BeautyPhoraUITests */,
 				E9047B8429705197000B1885 /* Products */,
+				1A339528DA177A025E5D8CA4 /* Pods */,
+				2CCEA26AC31C17B73B082FE1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +217,7 @@
 		E9047B8929705197000B1885 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				E9047BEF29708080000B1885 /* Repository */,
 				E9047BC629705DAA000B1885 /* LocalStore */,
 				E9047BC529705DA3000B1885 /* RemoteStore */,
 			);
@@ -248,7 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				E9047BD5297065EB000B1885 /* Models */,
-				E9047BEF29708080000B1885 /* Repository */,
 				E9047BEE29708078000B1885 /* Store */,
 				E9047BC729705DB6000B1885 /* Network */,
 			);
@@ -310,7 +356,7 @@
 			children = (
 				E9047BD62970660E000B1885 /* ProductDTO.swift */,
 				E9047BE129706BE1000B1885 /* BrandDTO.swift */,
-				E9047BE329706C05000B1885 /* PPImageDTO.swift */,
+				E9047BE329706C05000B1885 /* ImagesURLDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -318,6 +364,7 @@
 		E9047BD82970684E000B1885 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
+				E98C99172970E89900439B3D /* RepositoryTests */,
 				E9047BFD29709A3B000B1885 /* LocaleStoreTests */,
 				E9047BF6297081E2000B1885 /* RemoteStoreTests */,
 				E9047BDB29706992000B1885 /* Mocks & Stubs */,
@@ -378,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				E9047BD9297068B3000B1885 /* RequesterTests.swift */,
+				E98C99152970D48100439B3D /* RemoteStoreTests.swift */,
 			);
 			path = RemoteStoreTests;
 			sourceTree = "<group>";
@@ -406,6 +454,14 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		E98C99172970E89900439B3D /* RepositoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				E98C99182970E8A700439B3D /* ProductRepositoryTests.swift */,
+			);
+			path = RepositoryTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -413,10 +469,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9047BB22970519A000B1885 /* Build configuration list for PBXNativeTarget "BeautyPhora" */;
 			buildPhases = (
+				D22B88325931B57C1354111A /* [CP] Check Pods Manifest.lock */,
 				E9047B7F29705197000B1885 /* Sources */,
 				E9047B8029705197000B1885 /* Frameworks */,
 				E9047B8129705197000B1885 /* Resources */,
 				E9047BC329705398000B1885 /* ShellScript */,
+				B45A421440E802A59D16D54B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -431,9 +489,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9047BB52970519A000B1885 /* Build configuration list for PBXNativeTarget "BeautyPhoraTests" */;
 			buildPhases = (
+				385E8AC0A1B6FEC551A8FA5D /* [CP] Check Pods Manifest.lock */,
 				E9047B9A2970519A000B1885 /* Sources */,
 				E9047B9B2970519A000B1885 /* Frameworks */,
 				E9047B9C2970519A000B1885 /* Resources */,
+				1168DC50DBA14D77870D401D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,9 +509,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9047BB82970519A000B1885 /* Build configuration list for PBXNativeTarget "BeautyPhoraUITests" */;
 			buildPhases = (
+				4D1580E7E3FE8F0AC4621FC1 /* [CP] Check Pods Manifest.lock */,
 				E9047BA42970519A000B1885 /* Sources */,
 				E9047BA52970519A000B1885 /* Frameworks */,
 				E9047BA62970519A000B1885 /* Resources */,
+				7F9836EAA37BC8E8733CCBD8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -533,6 +595,123 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1168DC50DBA14D77870D401D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeautyPhoraTests/Pods-BeautyPhoraTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeautyPhoraTests/Pods-BeautyPhoraTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeautyPhoraTests/Pods-BeautyPhoraTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		385E8AC0A1B6FEC551A8FA5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeautyPhoraTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D1580E7E3FE8F0AC4621FC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeautyPhora-BeautyPhoraUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F9836EAA37BC8E8733CCBD8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeautyPhora-BeautyPhoraUITests/Pods-BeautyPhora-BeautyPhoraUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeautyPhora-BeautyPhoraUITests/Pods-BeautyPhora-BeautyPhoraUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeautyPhora-BeautyPhoraUITests/Pods-BeautyPhora-BeautyPhoraUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B45A421440E802A59D16D54B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeautyPhora/Pods-BeautyPhora-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeautyPhora/Pods-BeautyPhora-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeautyPhora/Pods-BeautyPhora-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D22B88325931B57C1354111A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeautyPhora-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E9047BC329705398000B1885 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -572,7 +751,7 @@
 				E9047BD029705EB1000B1885 /* APIProvider.swift in Sources */,
 				E9047BC1297052B5000B1885 /* HomeViewController.swift in Sources */,
 				E9047BD22970654A000B1885 /* Requester.swift in Sources */,
-				E9047BE429706C05000B1885 /* PPImageDTO.swift in Sources */,
+				E9047BE429706C05000B1885 /* ImagesURLDTO.swift in Sources */,
 				E9047BD42970656A000B1885 /* Endpoint.swift in Sources */,
 				E9047BBE29705297000B1885 /* SceneDelegate.swift in Sources */,
 				E9047BEB29707DC3000B1885 /* ProductRemoteStore.swift in Sources */,
@@ -590,6 +769,8 @@
 				E9047BA32970519A000B1885 /* BeautyPhoraTests.swift in Sources */,
 				E9047BDD2970699D000B1885 /* StubsProvider.swift in Sources */,
 				E9047BDA297068B3000B1885 /* RequesterTests.swift in Sources */,
+				E98C99162970D48100439B3D /* RemoteStoreTests.swift in Sources */,
+				E98C99192970E8A700439B3D /* ProductRepositoryTests.swift in Sources */,
 				E9047BFF29709A4D000B1885 /* LocaleStoreTests.swift in Sources */,
 				E9047BE629706F0B000B1885 /* MockURLProtocol.swift in Sources */,
 			);
@@ -731,6 +912,7 @@
 		};
 		E9047BB32970519A000B1885 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 730E0F285DF32F1CD85AB167 /* Pods-BeautyPhora.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -772,6 +954,7 @@
 		};
 		E9047BB42970519A000B1885 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 079CEE34382B684F4FE4BBE8 /* Pods-BeautyPhora.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -813,6 +996,7 @@
 		};
 		E9047BB62970519A000B1885 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2870451DE4D4C8B97765941A /* Pods-BeautyPhoraTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -836,6 +1020,7 @@
 		};
 		E9047BB72970519A000B1885 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB1805E536EF40F6F5924D1A /* Pods-BeautyPhoraTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -859,6 +1044,7 @@
 		};
 		E9047BB92970519A000B1885 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60AB9F1CD7DE3875D6518750 /* Pods-BeautyPhora-BeautyPhoraUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -881,6 +1067,7 @@
 		};
 		E9047BBA2970519A000B1885 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1034F55851ADD13D744377AA /* Pods-BeautyPhora-BeautyPhoraUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -946,6 +1133,8 @@
 		E9047B8D29705197000B1885 /* BeautyPhora.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				E9B5A5B029716E7300DCFF0A /* BeautyPhora 3.xcdatamodel */,
+				E9B5A5AF29716B4700DCFF0A /* BeautyPhora 2.xcdatamodel */,
 				E9047B8E29705197000B1885 /* BeautyPhora.xcdatamodel */,
 			);
 			currentVersion = E9047B8E29705197000B1885 /* BeautyPhora.xcdatamodel */;

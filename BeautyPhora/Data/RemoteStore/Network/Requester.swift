@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import RxSwift
+
+// swiftlint: disable identifier_name
 
 class Requester: DataServiceProviderProtocol {
     
@@ -20,6 +23,41 @@ class Requester: DataServiceProviderProtocol {
     
     init(urlSession: URLSession = .shared) {
         self.urlSession = urlSession
+    }
+    
+    public func requestRx<T: Decodable>(from provider: NetworkProviderProtcol, of type: T.Type) -> Observable<T> {
+        
+        if let urlRequest: URLRequest = try? provider.buildURLRequest() {
+            return Observable.create { observer in
+                let task = self.urlSession.dataTask(with: urlRequest) { (data, response, error) in
+                    if let httpResponse = response as? HTTPURLResponse {
+                        let statusCode = httpResponse.statusCode
+                        do {
+                            let _data = data ?? Data()
+                            if (200...399).contains(statusCode) {
+                                
+                                if let resultObject = try? JSONDecoder().decode(T.self, from: _data) {
+                                    observer.onNext(resultObject)
+                                } else {
+                                    observer.onError(ServiceError.decodingError)
+                                }
+                            } else {
+                                observer.onError(error!)
+                            }
+                        } catch {
+                            observer.onError(error)
+                        }
+                    }
+                    observer.onCompleted()
+                }
+                task.resume()
+                return Disposables.create {
+                    task.cancel()
+                }
+            }
+        } else {
+            return Observable.error(ServiceError.urlRequest)
+        }
     }
     
     func request<T>(from provider: NetworkProviderProtcol, of type: T.Type) async throws -> T where T: Decodable {

@@ -8,6 +8,7 @@
 import XCTest
 @testable import BeautyPhora
 import CoreData
+import RxTest
 
 final class LocaleStoreTests: XCTestCase {
     
@@ -18,8 +19,14 @@ final class LocaleStoreTests: XCTestCase {
         localeStore = ProductDaoStore()
     }
     
+    func test_get_all_locale_rx() throws {
+        let products = try? localeStore.getProducts()
+        
+        XCTAssertNotNil(products)
+    }
+    
     func test_get_all_locale() throws {
-        let products = try? localeStore.getAllProduct()
+        let products = try? localeStore.getProducts()
         
         XCTAssertNotNil(products)
     }
@@ -32,7 +39,7 @@ final class LocaleStoreTests: XCTestCase {
             return
         }
         
-        XCTAssertNotNil(try? localeStore.save(product: random), "Save failed with error")
+        XCTAssertNotNil(try? localeStore.insert(product: random), "Save failed with error")
         
         // lets try to grab saved random
         guard let savedRandom = try? localeStore.getProduct(id: random.id) else {

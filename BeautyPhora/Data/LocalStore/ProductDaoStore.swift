@@ -43,9 +43,37 @@ class ProductDaoStore: BaseDao, ProductDaoStoreProtocol {
             }
         })
         self.container.viewContext.automaticallyMergesChangesFromParent = true
+        self.container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
     
-    func getAllProduct() throws -> PProducts {
+    func performUpdates(with products: Products) {
+//        products.forEach { product in
+//            remove(with: product.id)
+//            print("inserting \(product.id)")
+//            try? insert(product: product)
+//        }
+        removeAll(in: "Product")
+        products.forEach { product in
+            try? insert(product: product)
+        }
+    }
+    
+    func removeAll(in entity : String) {
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        do {
+            try self.container.viewContext.execute(deleteRequest)
+            try self.container.viewContext.save()
+        } catch {
+            print ("There was an error")
+        }
+    }
+    
+    func remove(with id: Int) {
+        print("removing \(id)")
+    }
+    
+    func getProducts() throws -> PProducts {
         // perform db fetch
         let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
         return try self.container.viewContext
@@ -55,7 +83,7 @@ class ProductDaoStore: BaseDao, ProductDaoStoreProtocol {
             }
     }
     
-    func getProduct(id: Int) throws -> PProduct {
+    func getProduct(id: Int) throws -> any PProduct {
         let fetchRequest: NSFetchRequest<Product> = NSFetchRequest(entityName: "Product")
         fetchRequest.predicate = NSPredicate(format: "id == %i", id)
         fetchRequest.fetchLimit = 1
@@ -65,7 +93,7 @@ class ProductDaoStore: BaseDao, ProductDaoStoreProtocol {
         return self.decode(object: product)
     }
     
-    func save(product: PProduct) throws {
+    func insert(product: any PProduct) throws {
         var localProduct: Product = .init(context: self.container.viewContext)
         guard let dto = product as? ProductDTO else { throw NSError() }
         encode(entity: dto, into: &localProduct)

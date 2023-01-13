@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol HasProductRepositoryProtocol {
     var productRepository: ProductRepositoryProtocol { get }
 }
 
 protocol ProductRepositoryProtocol {
-    func getProducts() async throws -> Products
+    func getProducts() async throws -> PProducts
+    func getProductRx() -> Observable<PProducts>
 }
