@@ -22,7 +22,6 @@ class HomeViewController: UIViewController {
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
         collectionView.backgroundColor = .white
-        collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
         collectionView.alwaysBounceVertical = true
         
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
@@ -49,7 +48,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Morning 💄"
         view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         // Do any additional setup after loading the view.
         setupCollectionView()
@@ -109,6 +110,8 @@ extension HomeViewController {
     fileprivate func setupCollectionView() {
         // Set up collection view
         collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
+        
+        collectionView.register(ReusableSectionView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ReusableSectionView.identifier)
     }
 }
 

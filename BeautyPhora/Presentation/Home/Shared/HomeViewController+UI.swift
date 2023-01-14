@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 import RxSwift
-import RxRelay
 import RxCocoa
 import RxDataSources
 
@@ -23,8 +22,28 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
             return cell ?? .init()
         }
         
+        dataSource.configureSupplementaryView = {(section, collectionView, _, indexPath) -> UICollectionReusableView in
+            
+            guard let header = collectionView
+                .dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ReusableSectionView.identifier, for: indexPath) as? ReusableSectionView
+            else {
+                return UICollectionReusableView()
+            }
+            header.setup(with: section[indexPath.section].header)
+            return header
+        }
+        
         viewModel.sectionModels
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: ReusableSectionView.identifier,
+            for: indexPath) as? ReusableSectionView else { return UICollectionReusableView(frame: .zero) }
+        
+        return headerView
     }
 }

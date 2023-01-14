@@ -40,6 +40,7 @@
 		E9063F212973067000AE42DD /* ViewLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9063F202973067000AE42DD /* ViewLayoutProvider.swift */; };
 		E9063F23297306A500AE42DD /* SectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9063F22297306A500AE42DD /* SectionViewModel.swift */; };
 		E9063F2629732EA400AE42DD /* ProductListViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9063F2529732EA400AE42DD /* ProductListViewModelState.swift */; };
+		E9063F282973319100AE42DD /* ReusableSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9063F272973319100AE42DD /* ReusableSectionView.swift */; };
 		E98C99162970D48100439B3D /* RemoteStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C99152970D48100439B3D /* RemoteStoreTests.swift */; };
 		E98C99192970E8A700439B3D /* ProductRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C99182970E8A700439B3D /* ProductRepositoryTests.swift */; };
 		E9B5A5B32971704600DCFF0A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5A5B22971704600DCFF0A /* HomeViewModel.swift */; };
@@ -106,6 +107,7 @@
 		E9063F202973067000AE42DD /* ViewLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLayoutProvider.swift; sourceTree = "<group>"; };
 		E9063F22297306A500AE42DD /* SectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewModel.swift; sourceTree = "<group>"; };
 		E9063F2529732EA400AE42DD /* ProductListViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModelState.swift; sourceTree = "<group>"; };
+		E9063F272973319100AE42DD /* ReusableSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableSectionView.swift; sourceTree = "<group>"; };
 		E98C99152970D48100439B3D /* RemoteStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStoreTests.swift; sourceTree = "<group>"; };
 		E98C99182970E8A700439B3D /* ProductRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepositoryTests.swift; sourceTree = "<group>"; };
 		E9B5A5AF29716B4700DCFF0A /* BeautyPhora 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BeautyPhora 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 			children = (
 				E9B5A5B92971747F00DCFF0A /* ProductCollectionViewCell.swift */,
 				E9063F202973067000AE42DD /* ViewLayoutProvider.swift */,
+				E9063F272973319100AE42DD /* ReusableSectionView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				E9047BED29707DD1000B1885 /* ProductRemoteStoreProtocol.swift in Sources */,
 				E9047B8F29705197000B1885 /* BeautyPhora.xcdatamodeld in Sources */,
 				E9047BCE29705E17000B1885 /* NetworkProviderProtocol.swift in Sources */,
+				E9063F282973319100AE42DD /* ReusableSectionView.swift in Sources */,
 				E9047BCC29705DF8000B1885 /* DataServiceProviderProtocol.swift in Sources */,
 				E9B5A5BA2971747F00DCFF0A /* ProductCollectionViewCell.swift in Sources */,
 				E9063F23297306A500AE42DD /* SectionViewModel.swift in Sources */,

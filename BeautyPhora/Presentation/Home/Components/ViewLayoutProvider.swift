@@ -20,6 +20,14 @@ enum ViewLayoutProvider: Int {
         }
     }
     
+    private var sectionHeader: NSCollectionLayoutBoundarySupplementaryItem {
+        return .init(layoutSize: NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(45.0)),
+                     elementKind: UICollectionView.elementKindSectionHeader,
+                     alignment: .top)
+    }
+    
     private func buildStandardLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
@@ -35,6 +43,7 @@ enum ViewLayoutProvider: Int {
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = spacing
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
+        section.boundarySupplementaryItems = [sectionHeader]
         
         return section
     }
@@ -61,7 +70,7 @@ enum ViewLayoutProvider: Int {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
-        
+        section.boundarySupplementaryItems = [sectionHeader]
         return section
     }
 }
