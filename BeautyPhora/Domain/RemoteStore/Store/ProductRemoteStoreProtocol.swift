@@ -13,6 +13,6 @@ protocol HasProductRemoteStoreProtocol {
 }
 
 protocol ProductRemoteStoreProtocol {
-    func getProducts() async throws -> PProducts
-    func getProducts() -> Observable<PProducts>
+    func getProducts() async throws -> ProductsProtocol
+    func getProducts() -> Observable<ProductsProtocol>
 }

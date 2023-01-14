@@ -7,25 +7,25 @@
 
 import Foundation
 
-typealias PProducts = [PProduct]
+typealias ProductsProtocol = [ProductProtocol]
 
-protocol PProduct: Decodable {
+protocol ProductProtocol: Decodable {
     var id: String { get }
     var name: String { get }
     var description: String { get }
     var price: Int { get }
-    var image: PImagesURL { get }
-    var brand: PBrand { get }
+    var image: ImagesProtocol { get }
+    var brand: BrandProtocol { get }
     var isProductSet: Bool { get }
     var isSpecialBrand: Bool { get }
 }
 
-protocol PImagesURL: Codable {
+protocol ImagesProtocol: Codable {
     var small: String { get }
     var large: String { get }
 }
 
-protocol PBrand: Codable {
+protocol BrandProtocol: Codable {
     var id: String { get }
     var name: String { get }
 }

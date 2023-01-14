@@ -16,16 +16,16 @@ class ProductRemoteStore: ProductRemoteStoreProtocol, HasDataServiceProviderProt
         self.requester = requester
     }
     
-    func getProducts() async throws -> PProducts {
+    func getProducts() async throws -> ProductsProtocol {
         // init endpoint
         let endpoint = Endpoint(method: .get, endURL: APIProvider.items)
         return try await requester.request(from: endpoint, of: Products.self)
     }
     
-    func getProducts() -> Observable<PProducts> {
+    func getProducts() -> Observable<ProductsProtocol> {
         // init endpoint
         let endpoint = Endpoint(method: .get, endURL: APIProvider.items)
         let observedProducts = requester.requestRx(from: endpoint, of: Products.self)
-        return observedProducts.map { $0 as PProducts }
+        return observedProducts.map { $0 as ProductsProtocol }
     }
 }

@@ -16,7 +16,7 @@ struct ProductModel {
     var isSpecialBrand: Bool
     var previewSmallImage: URL?
     
-    init(product: PProduct) {
+    init(product: ProductProtocol) {
         self.title = product.name
         self.description = product.description
         self.isSpecialBrand = product.isSpecialBrand

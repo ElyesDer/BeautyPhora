@@ -12,9 +12,9 @@ protocol HasProductDaoStoreProtocol {
 }
 
 protocol ProductDaoStoreProtocol {
-    func getProducts() throws -> PProducts
-    func getProduct(id: Int) throws -> PProduct
-    func insert(product: PProduct) throws
-    func performUpdates(with products: Products)
+    func getProducts() throws -> ProductsProtocol
+    func getProduct(id: Int) throws -> ProductProtocol
+    func insert(product: ProductProtocol) throws
+    func performUpdates(with products: ProductsProtocol)
     func removeAll(in entity: String)
 }

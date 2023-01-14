@@ -8,6 +8,6 @@
 import Foundation
 
 // MARK: - Brand
-struct BrandDTO: PBrand {
+struct BrandDTO: BrandProtocol {
     let id, name: String
 }

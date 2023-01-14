@@ -20,7 +20,7 @@ class ProductRepository: ProductRepositoryProtocol, HasProductRemoteStoreProtoco
         self.remoteStore = dependencies.remoteStore
     }
     
-    func getProduct() -> Observable<PProducts> {
+    func getProduct() -> Observable<ProductsProtocol> {
         let localData = (try? localStore.getProducts()) ?? []
         return Observable.of(
             Observable.create({ observer in
