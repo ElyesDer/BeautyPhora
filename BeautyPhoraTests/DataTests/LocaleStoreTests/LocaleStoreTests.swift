@@ -42,7 +42,7 @@ final class LocaleStoreTests: XCTestCase {
         XCTAssertNotNil(try? localeStore.insert(product: random), "Save failed with error")
         
         // lets try to grab saved random
-        guard let savedRandom = try? localeStore.getProduct(id: random.id) else {
+        guard let savedRandom = try? localeStore.getProduct(id: Int(random.id) ?? 0) else {
             XCTFail("Failed to grab product from local store")
             return
         }

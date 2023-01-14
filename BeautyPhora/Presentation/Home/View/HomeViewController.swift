@@ -66,6 +66,25 @@ extension HomeViewController {
     // setup binding
     func bindViewModelToView() {
         bindCollectionView()
+        
+        viewModel.state
+            .observe(on: MainScheduler.instance)
+            .subscribe { [weak self] event in
+            switch event {
+                case .next(let state):
+                    switch state {
+                        case .loading:
+                            self?.activityIndicationView.startAnimating()
+                        case .idle:
+                            self?.activityIndicationView.stopAnimating()
+                        case .error:
+                            self?.activityIndicationView.stopAnimating()
+                    }
+                default:
+                    break
+            }
+        }
+        .disposed(by: disposeBag)
     }
     
     fileprivate func setupViews() {

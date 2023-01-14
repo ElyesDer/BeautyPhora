@@ -22,7 +22,7 @@ class ProductRepository: ProductRepositoryProtocol, HasProductRemoteStoreProtoco
     
     func getProducts() async throws -> PProducts {
         
-        let setOfCachedProducts = try localStore.getProducts()
+        _ = try localStore.getProducts()
         let updatedProducts = try await remoteStore.getProducts()
         
         return updatedProducts

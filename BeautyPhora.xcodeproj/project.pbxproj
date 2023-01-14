@@ -11,9 +11,7 @@
 		3BC1F7D79712BAF99C688970 /* Pods_BeautyPhora_BeautyPhoraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D37C57616497545322A498 /* Pods_BeautyPhora_BeautyPhoraUITests.framework */; };
 		7CD9F6F6FE5A5AB3D554AFDB /* Pods_BeautyPhoraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA57967D20AFAEC622A21F3 /* Pods_BeautyPhoraTests.framework */; };
 		E9047B8829705197000B1885 /* BeautyPhoraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047B8729705197000B1885 /* BeautyPhoraApp.swift */; };
-		E9047B8B29705197000B1885 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047B8A29705197000B1885 /* Persistence.swift */; };
 		E9047B8F29705197000B1885 /* BeautyPhora.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9047B8D29705197000B1885 /* BeautyPhora.xcdatamodeld */; };
-		E9047B9229705197000B1885 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047B9129705197000B1885 /* ContentView.swift */; };
 		E9047B952970519A000B1885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9047B942970519A000B1885 /* Assets.xcassets */; };
 		E9047B992970519A000B1885 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9047B982970519A000B1885 /* Preview Assets.xcassets */; };
 		E9047BA32970519A000B1885 /* BeautyPhoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BA22970519A000B1885 /* BeautyPhoraTests.swift */; };
@@ -50,6 +48,8 @@
 		E9B5A5BD2971757B00DCFF0A /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5A5BC2971757B00DCFF0A /* UIView+Constraints.swift */; };
 		E9B5A5C0297178E700DCFF0A /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5A5BF297178E700DCFF0A /* ViewModelFactory.swift */; };
 		E9B5A5C229717C7900DCFF0A /* UIImageView+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5A5C129717C7900DCFF0A /* UIImageView+Loader.swift */; };
+		E9EA5F8F2972C211002625EE /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EA5F8E2972C211002625EE /* HomeViewModelTests.swift */; };
+		E9EA5F912972C809002625EE /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = E9EA5F902972C809002625EE /* readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,9 +81,7 @@
 		DB1805E536EF40F6F5924D1A /* Pods-BeautyPhoraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyPhoraTests.release.xcconfig"; path = "Target Support Files/Pods-BeautyPhoraTests/Pods-BeautyPhoraTests.release.xcconfig"; sourceTree = "<group>"; };
 		E9047B8329705197000B1885 /* BeautyPhora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyPhora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9047B8729705197000B1885 /* BeautyPhoraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyPhoraApp.swift; sourceTree = "<group>"; };
-		E9047B8A29705197000B1885 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E9047B8E29705197000B1885 /* BeautyPhora.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BeautyPhora.xcdatamodel; sourceTree = "<group>"; };
-		E9047B9129705197000B1885 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E9047B942970519A000B1885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9047B962970519A000B1885 /* BeautyPhora.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeautyPhora.entitlements; sourceTree = "<group>"; };
 		E9047B982970519A000B1885 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -127,6 +125,8 @@
 		E9B5A5BF297178E700DCFF0A /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		E9B5A5C129717C7900DCFF0A /* UIImageView+Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Loader.swift"; sourceTree = "<group>"; };
 		E9B5A5C329717E0700DCFF0A /* BeautyPhora 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BeautyPhora 4.xcdatamodel"; sourceTree = "<group>"; };
+		E9EA5F8E2972C211002625EE /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		E9EA5F902972C809002625EE /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +183,7 @@
 		E9047B7A29705197000B1885 = {
 			isa = PBXGroup;
 			children = (
+				E9EA5F902972C809002625EE /* readme.md */,
 				E9047B8529705197000B1885 /* BeautyPhora */,
 				E9047BA12970519A000B1885 /* BeautyPhoraTests */,
 				E9047BAB2970519A000B1885 /* BeautyPhoraUITests */,
@@ -252,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				E9047BBF297052A6000B1885 /* Home */,
-				E9047B9129705197000B1885 /* ContentView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -277,6 +277,7 @@
 		E9047BA12970519A000B1885 /* BeautyPhoraTests */ = {
 			isa = PBXGroup;
 			children = (
+				E9EA5F8D2972C1FC002625EE /* PresentationTests */,
 				E9047BD82970684E000B1885 /* DataTests */,
 				E9047BA22970519A000B1885 /* BeautyPhoraTests.swift */,
 			);
@@ -325,7 +326,6 @@
 			children = (
 				E9047C002970B8BD000B1885 /* Shared */,
 				E9047B8C29705197000B1885 /* Database */,
-				E9047B8A29705197000B1885 /* Persistence.swift */,
 				E9047BFB29708C72000B1885 /* ProductDaoStore.swift */,
 			);
 			path = LocalStore;
@@ -529,6 +529,14 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
+		E9EA5F8D2972C1FC002625EE /* PresentationTests */ = {
+			isa = PBXGroup;
+			children = (
+				E9EA5F8E2972C211002625EE /* HomeViewModelTests.swift */,
+			);
+			path = PresentationTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -649,6 +657,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9EA5F912972C809002625EE /* readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,9 +820,7 @@
 				E9047BCC29705DF8000B1885 /* DataServiceProvider.swift in Sources */,
 				E9B5A5BA2971747F00DCFF0A /* ProductCollectionViewCell.swift in Sources */,
 				E9047BE029706B3A000B1885 /* PProduct.swift in Sources */,
-				E9047B9229705197000B1885 /* ContentView.swift in Sources */,
 				E9047BBC29705282000B1885 /* AppDelegate.swift in Sources */,
-				E9047B8B29705197000B1885 /* Persistence.swift in Sources */,
 				E9047BFA29708A5F000B1885 /* ProductDaoStoreProtocol.swift in Sources */,
 				E9047BFC29708C72000B1885 /* ProductDaoStore.swift in Sources */,
 				E9B5A5C0297178E700DCFF0A /* ViewModelFactory.swift in Sources */,
@@ -842,6 +849,7 @@
 				E9047BA32970519A000B1885 /* BeautyPhoraTests.swift in Sources */,
 				E9047BDD2970699D000B1885 /* StubsProvider.swift in Sources */,
 				E9047BDA297068B3000B1885 /* RequesterTests.swift in Sources */,
+				E9EA5F8F2972C211002625EE /* HomeViewModelTests.swift in Sources */,
 				E98C99162970D48100439B3D /* RemoteStoreTests.swift in Sources */,
 				E98C99192970E8A700439B3D /* ProductRepositoryTests.swift in Sources */,
 				E9047BFF29709A4D000B1885 /* LocaleStoreTests.swift in Sources */,
