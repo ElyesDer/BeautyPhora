@@ -39,6 +39,7 @@
 		E9063F1F2972FFEA00AE42DD /* HomeViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9063F1E2972FFEA00AE42DD /* HomeViewController+UI.swift */; };
 		E9063F212973067000AE42DD /* ViewLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9063F202973067000AE42DD /* ViewLayoutProvider.swift */; };
 		E9063F23297306A500AE42DD /* SectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9063F22297306A500AE42DD /* SectionViewModel.swift */; };
+		E9063F2629732EA400AE42DD /* ProductListViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9063F2529732EA400AE42DD /* ProductListViewModelState.swift */; };
 		E98C99162970D48100439B3D /* RemoteStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C99152970D48100439B3D /* RemoteStoreTests.swift */; };
 		E98C99192970E8A700439B3D /* ProductRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C99182970E8A700439B3D /* ProductRepositoryTests.swift */; };
 		E9B5A5B32971704600DCFF0A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5A5B22971704600DCFF0A /* HomeViewModel.swift */; };
@@ -104,6 +105,7 @@
 		E9063F1E2972FFEA00AE42DD /* HomeViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UI.swift"; sourceTree = "<group>"; };
 		E9063F202973067000AE42DD /* ViewLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLayoutProvider.swift; sourceTree = "<group>"; };
 		E9063F22297306A500AE42DD /* SectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewModel.swift; sourceTree = "<group>"; };
+		E9063F2529732EA400AE42DD /* ProductListViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModelState.swift; sourceTree = "<group>"; };
 		E98C99152970D48100439B3D /* RemoteStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStoreTests.swift; sourceTree = "<group>"; };
 		E98C99182970E8A700439B3D /* ProductRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepositoryTests.swift; sourceTree = "<group>"; };
 		E9B5A5AF29716B4700DCFF0A /* BeautyPhora 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BeautyPhora 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -185,9 +187,9 @@
 		E9047B8529705197000B1885 /* BeautyPhora */ = {
 			isa = PBXGroup;
 			children = (
-				E9B5A5BB2971757000DCFF0A /* Extensions */,
 				E9047B962970519A000B1885 /* BeautyPhora.entitlements */,
 				E9047BC429705D50000B1885 /* Info.plist */,
+				E9B5A5BB2971757000DCFF0A /* Extensions */,
 				E9047B8629705197000B1885 /* Application */,
 				E9047BC829705DD5000B1885 /* Domain */,
 				E9047B8929705197000B1885 /* Data */,
@@ -438,6 +440,7 @@
 			children = (
 				E9063F1B2972F3E400AE42DD /* ProductModel.swift */,
 				E9063F22297306A500AE42DD /* SectionViewModel.swift */,
+				E9063F2529732EA400AE42DD /* ProductListViewModelState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 				E9047BEB29707DC3000B1885 /* ProductRemoteStore.swift in Sources */,
 				E9047BE229706BE1000B1885 /* BrandDTO.swift in Sources */,
 				E9063F212973067000AE42DD /* ViewLayoutProvider.swift in Sources */,
+				E9063F2629732EA400AE42DD /* ProductListViewModelState.swift in Sources */,
 				E9B5A5C229717C7900DCFF0A /* UIImageView+Loader.swift in Sources */,
 				E9047BF12970808D000B1885 /* ProductRepository.swift in Sources */,
 				E9047C022970B8C6000B1885 /* CoreData+.swift in Sources */,

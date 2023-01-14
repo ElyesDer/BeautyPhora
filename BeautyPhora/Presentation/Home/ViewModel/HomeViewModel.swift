@@ -9,13 +9,15 @@ import Foundation
 import RxSwift
 import RxRelay
 
-class HomeViewModel: HasProductRepositoryProtocol {
-    
-    enum ProductListViewModelState {
-        case idle
-        case loading
-        case error (String)
-    }
+protocol HomeViewModelProtocol: ProductRepositoryProviderProtocol {
+    var productList: BehaviorRelay<Products> { get }
+    var favoriteProductList: BehaviorRelay<Products> { get }
+    var state: BehaviorRelay<ProductListViewModelState> { get }
+    var sectionModels: BehaviorRelay<[SectionViewModel]> { get }
+    func fetchProduct()
+}
+
+class HomeViewModel: HomeViewModelProtocol {
     
     var productRepository: ProductRepositoryProtocol
     

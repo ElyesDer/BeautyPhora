@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-protocol HasProductRepositoryProtocol {
+protocol ProductRepositoryProviderProtocol {
     var productRepository: ProductRepositoryProtocol { get }
 }
 
