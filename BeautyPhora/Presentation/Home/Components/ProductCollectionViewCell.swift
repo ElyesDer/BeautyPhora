@@ -91,35 +91,36 @@ class ProductCollectionViewCell: UICollectionViewCell {
         contentStackView.addArrangedSubview(descriptionLabel)
         
         contentStackView.backgroundColor = .white.withAlphaComponent(0.3)
+        container.debugView(color: .lightGray.withAlphaComponent(0.1))
     }
     
     fileprivate func setupConstraint() {
         container.fillSuperview()
         
         imageView.anchor(top: container.topAnchor, leading: container.leadingAnchor, bottom: nil, trailing: container.trailingAnchor,
-                         padding: .init(top: 4, left: 8, bottom: 4, right: 8))
+                         padding: .init(top: 0, left: 0, bottom: 4, right: 0))
         
         contentStackView.anchor(top: nil,
-                            leading: container.leadingAnchor,
-                            bottom: container.bottomAnchor,
-                            trailing: container.trailingAnchor,
-                            padding: .init(top: 4, left: 8, bottom: 8, right: 8))
+                                leading: container.leadingAnchor,
+                                bottom: container.bottomAnchor,
+                                trailing: container.trailingAnchor,
+                                padding: .init(top: 4, left: 8, bottom: 8, right: 8))
         
         NSLayoutConstraint.activate([
-            imageView.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 1),
+            imageView.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 0.6),
             contentStackView.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 0.4)
         ])
     }
     
-    public func setup(model: PProduct) {
-        guard !model.image.small.isEmpty else {
+    public func setup(model: ProductModel) {
+        guard let urlPreview = model.previewSmallImage else {
             imageView.image = .init(named: "im_default")
             return
         }
-        productLabel.text = model.name
+        productLabel.text = model.title
         descriptionLabel.text = model.description
-        priceLabel.text = String(model.price)
-        imageView.imageFromServerURL(model.image.small, placeHolder: .init(named: "im_default"))
+        priceLabel.text = model.price
+        imageView.imageFromServerURL(urlPreview, placeHolder: .init(named: "im_default"))
     }
     
     required init?(coder: NSCoder) {

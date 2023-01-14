@@ -10,26 +10,21 @@ import UIKit
 // thanks to: https://stackoverflow.com/a/37019507/5354067
 
 extension UIImageView {
-    func imageFromServerURL(_ URLString: String, placeHolder: UIImage?) {
-        
-        let imageServerUrl = URLString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? String()
-        
-        if let url = URL(string: imageServerUrl) {
-            URLSession.shared.dataTask(with: url, completionHandler: { (data, _, error) in
-                if error != nil {
-                    DispatchQueue.main.async {
-                        self.image = placeHolder
-                    }
-                    return
-                }
+    func imageFromServerURL(_ url: URL, placeHolder: UIImage?) {
+        URLSession.shared.dataTask(with: url, completionHandler: { (data, _, error) in
+            if error != nil {
                 DispatchQueue.main.async {
-                    if let data = data, let downloadedImage = UIImage(data: data) {
-                        self.image = downloadedImage
-                    } else {
-                        self.image = placeHolder
-                    }
+                    self.image = placeHolder
                 }
-            }).resume()
-        }
+                return
+            }
+            DispatchQueue.main.async {
+                if let data = data, let downloadedImage = UIImage(data: data) {
+                    self.image = downloadedImage
+                } else {
+                    self.image = placeHolder
+                }
+            }
+        }).resume()
     }
 }

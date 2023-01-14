@@ -49,13 +49,13 @@ extension HomeViewModel {
                         
                         var prepareSection: [SectionViewModel] = []
                         prepareSection
-                            .append(
-                                .init(header: "Specials", items: self.favoriteProductList.value)
-                            )
+                            .append(.init(header: "Specials", items: self.favoriteProductList.value
+                                .map { ProductModel(product: $0) }
+                            ))
                         prepareSection
-                            .append(
-                                .init(header: "Products", items: self.productList.value)
-                            )
+                            .append(.init(header: "Products", items: self.productList.value
+                                .map { ProductModel(product: $0) }
+                            ))
                         self.sectionModels.accept(prepareSection)
                     case .completed:
                         self.state.accept(.idle)

@@ -10,12 +10,11 @@ import RxDataSources
 
 struct SectionViewModel {
     var header: String!
-    var items: Products
+    var items: ProductModels
 }
 
 extension SectionViewModel: SectionModelType {
-    typealias Item  = ProductDTO
-    init(original: SectionViewModel, items: Products) {
+    init(original: SectionViewModel, items: ProductModels) {
         self = original
         self.items = items
     }
