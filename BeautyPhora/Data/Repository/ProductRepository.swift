@@ -8,12 +8,12 @@
 import Foundation
 import RxSwift
 
-class ProductRepository: ProductRepositoryProtocol, HasProductRemoteStoreProtocol, HasProductDaoStoreProtocol {
+class ProductRepository: ProductRepositoryProtocol, ProductRemoteStoreProviderProtocol, ProductLocalStoreProviderProtocol {
     
     var localStore: ProductDaoStoreProtocol
     var remoteStore: ProductRemoteStoreProtocol
     
-    typealias Dependencies = HasProductDaoStoreProtocol & HasProductRemoteStoreProtocol
+    typealias Dependencies = ProductLocalStoreProviderProtocol & ProductRemoteStoreProviderProtocol
     
     init(dependencies: Dependencies) {
         self.localStore = dependencies.localStore

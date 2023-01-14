@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol HasProductDaoStoreProtocol {
+protocol ProductLocalStoreProviderProtocol {
     var localStore: ProductDaoStoreProtocol { get }
 }
 

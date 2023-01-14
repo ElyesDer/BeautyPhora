@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class ProductRemoteStore: ProductRemoteStoreProtocol, HasDataServiceProviderProtocol {
+class ProductRemoteStore: ProductRemoteStoreProtocol, DataServiceRequesterProviderProtocol {
     
     var requester: DataServiceProviderProtocol
     
@@ -16,16 +16,10 @@ class ProductRemoteStore: ProductRemoteStoreProtocol, HasDataServiceProviderProt
         self.requester = requester
     }
     
-    func getProducts() async throws -> ProductsProtocol {
-        // init endpoint
-        let endpoint = Endpoint(method: .get, endURL: APIProvider.items)
-        return try await requester.request(from: endpoint, of: Products.self)
-    }
-    
     func getProducts() -> Observable<ProductsProtocol> {
         // init endpoint
         let endpoint = Endpoint(method: .get, endURL: APIProvider.items)
-        let observedProducts = requester.requestRx(from: endpoint, of: Products.self)
+        let observedProducts = requester.request(from: endpoint, of: Products.self)
         return observedProducts.map { $0 as ProductsProtocol }
     }
 }

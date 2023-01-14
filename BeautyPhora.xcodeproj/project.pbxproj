@@ -18,7 +18,7 @@
 		E9047BBC29705282000B1885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BBB29705282000B1885 /* AppDelegate.swift */; };
 		E9047BBE29705297000B1885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BBD29705297000B1885 /* SceneDelegate.swift */; };
 		E9047BC1297052B5000B1885 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BC0297052B5000B1885 /* HomeViewController.swift */; };
-		E9047BCC29705DF8000B1885 /* DataServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BCB29705DF8000B1885 /* DataServiceProvider.swift */; };
+		E9047BCC29705DF8000B1885 /* DataServiceProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BCB29705DF8000B1885 /* DataServiceProviderProtocol.swift */; };
 		E9047BCE29705E17000B1885 /* NetworkProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BCD29705E17000B1885 /* NetworkProviderProtocol.swift */; };
 		E9047BD029705EB1000B1885 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BCF29705EB1000B1885 /* APIProvider.swift */; };
 		E9047BD22970654A000B1885 /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BD12970654A000B1885 /* Requester.swift */; };
@@ -93,7 +93,7 @@
 		E9047BBD29705297000B1885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E9047BC0297052B5000B1885 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E9047BC429705D50000B1885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		E9047BCB29705DF8000B1885 /* DataServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceProvider.swift; sourceTree = "<group>"; };
+		E9047BCB29705DF8000B1885 /* DataServiceProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceProviderProtocol.swift; sourceTree = "<group>"; };
 		E9047BCD29705E17000B1885 /* NetworkProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderProtocol.swift; sourceTree = "<group>"; };
 		E9047BCF29705EB1000B1885 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		E9047BD12970654A000B1885 /* Requester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requester.swift; sourceTree = "<group>"; };
@@ -364,7 +364,7 @@
 		E9047BCA29705DE3000B1885 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				E9047BCB29705DF8000B1885 /* DataServiceProvider.swift */,
+				E9047BCB29705DF8000B1885 /* DataServiceProviderProtocol.swift */,
 				E9047BCD29705E17000B1885 /* NetworkProviderProtocol.swift */,
 			);
 			path = Network;
@@ -818,7 +818,7 @@
 				E9047BED29707DD1000B1885 /* ProductRemoteStoreProtocol.swift in Sources */,
 				E9047B8F29705197000B1885 /* BeautyPhora.xcdatamodeld in Sources */,
 				E9047BCE29705E17000B1885 /* NetworkProviderProtocol.swift in Sources */,
-				E9047BCC29705DF8000B1885 /* DataServiceProvider.swift in Sources */,
+				E9047BCC29705DF8000B1885 /* DataServiceProviderProtocol.swift in Sources */,
 				E9B5A5BA2971747F00DCFF0A /* ProductCollectionViewCell.swift in Sources */,
 				E9063F23297306A500AE42DD /* SectionViewModel.swift in Sources */,
 				E9047BE029706B3A000B1885 /* ProductProtocol.swift in Sources */,

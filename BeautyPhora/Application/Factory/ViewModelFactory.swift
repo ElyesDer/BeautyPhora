@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ViewModelFactoryProtocol: HasDataServiceProviderProtocol, HasProductRemoteStoreProtocol, HasProductDaoStoreProtocol {}
+protocol ViewModelFactoryProtocol: DataServiceRequesterProviderProtocol, ProductRemoteStoreProviderProtocol, ProductLocalStoreProviderProtocol {}
 
 class ViewModelFactory: ViewModelFactoryProtocol {
     var remoteStore: ProductRemoteStoreProtocol

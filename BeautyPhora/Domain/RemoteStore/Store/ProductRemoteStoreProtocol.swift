@@ -8,11 +8,10 @@
 import Foundation
 import RxSwift
 
-protocol HasProductRemoteStoreProtocol {
+protocol ProductRemoteStoreProviderProtocol {
     var remoteStore: ProductRemoteStoreProtocol { get }
 }
 
 protocol ProductRemoteStoreProtocol {
-    func getProducts() async throws -> ProductsProtocol
     func getProducts() -> Observable<ProductsProtocol>
 }
