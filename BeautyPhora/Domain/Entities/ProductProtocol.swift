@@ -20,12 +20,12 @@ protocol ProductProtocol: Decodable {
     var isSpecialBrand: Bool { get }
 }
 
-protocol ImagesProtocol: Codable {
+protocol ImagesProtocol: Decodable {
     var small: String { get }
     var large: String { get }
 }
 
-protocol BrandProtocol: Codable {
+protocol BrandProtocol: Decodable {
     var id: String { get }
     var name: String { get }
 }

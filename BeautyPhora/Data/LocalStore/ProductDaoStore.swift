@@ -60,7 +60,7 @@ class ProductDaoStore: BaseDao, ProductDaoStoreProtocol {
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
         do {
             try self.container.viewContext.execute(deleteRequest)
-            try self.container.viewContext.save()
+            try self.container.viewContext.saveIfNeeded()
         } catch {
             assertionFailure("There was an error in removeAll function")
         }
