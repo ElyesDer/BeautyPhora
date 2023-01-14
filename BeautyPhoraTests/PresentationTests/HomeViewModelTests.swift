@@ -46,11 +46,11 @@ class MockProductRepository: ProductRepositoryProtocol {
     
     var products = [ProductDTO]()
     
-    func getProducts() async throws -> BeautyPhora.PProducts {
+    func getProducts() async throws -> PProducts {
         return []
     }
     
-    func getProductRx() -> RxSwift.Observable<BeautyPhora.PProducts> {
+    func getProductRx() -> Observable<PProducts> {
         return .create { observer in
             observer.onNext(StubProvider.instance.products)
             observer.onCompleted()

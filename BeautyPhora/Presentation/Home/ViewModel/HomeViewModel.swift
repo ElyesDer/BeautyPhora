@@ -8,20 +8,6 @@
 import Foundation
 import RxSwift
 import RxRelay
-import RxDataSources
-
-struct SectionViewModel {
-    var header: String!
-    var items: Products
-}
-
-extension SectionViewModel: SectionModelType {
-    typealias Item  = ProductDTO
-    init(original: SectionViewModel, items: Products) {
-        self = original
-        self.items = items
-    }
-}
 
 class HomeViewModel: HasProductRepositoryProtocol {
     
@@ -56,12 +42,20 @@ extension HomeViewModel {
             .subscribe({ event in
                 switch event {
                     case .next(let products):
-                        self.productList.accept(products.filter { !$0.isSpecialBrand } )
-                        self.favoriteProductList.accept(products.filter { $0.isSpecialBrand } )
+                        self.productList
+                            .accept(products.filter { !$0.isSpecialBrand } )
+                        self.favoriteProductList
+                            .accept(products.filter { $0.isSpecialBrand } )
                         
                         var prepareSection: [SectionViewModel] = []
-                        prepareSection.append(.init(header: "Specials", items: self.favoriteProductList.value))
-                        prepareSection.append(.init(header: "Products", items: self.productList.value))
+                        prepareSection
+                            .append(
+                                .init(header: "Specials", items: self.favoriteProductList.value)
+                            )
+                        prepareSection
+                            .append(
+                                .init(header: "Products", items: self.productList.value)
+                            )
                         self.sectionModels.accept(prepareSection)
                     case .completed:
                         self.state.accept(.idle)

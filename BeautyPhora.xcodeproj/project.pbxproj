@@ -3,18 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0ED7DCFA56C80D1E7B3D663D /* Pods_BeautyPhora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87110A6F781D8A15C2E51913 /* Pods_BeautyPhora.framework */; };
 		3BC1F7D79712BAF99C688970 /* Pods_BeautyPhora_BeautyPhoraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D37C57616497545322A498 /* Pods_BeautyPhora_BeautyPhoraUITests.framework */; };
 		7CD9F6F6FE5A5AB3D554AFDB /* Pods_BeautyPhoraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA57967D20AFAEC622A21F3 /* Pods_BeautyPhoraTests.framework */; };
-		E9047B8829705197000B1885 /* BeautyPhoraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047B8729705197000B1885 /* BeautyPhoraApp.swift */; };
 		E9047B8F29705197000B1885 /* BeautyPhora.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9047B8D29705197000B1885 /* BeautyPhora.xcdatamodeld */; };
 		E9047B952970519A000B1885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9047B942970519A000B1885 /* Assets.xcassets */; };
 		E9047B992970519A000B1885 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9047B982970519A000B1885 /* Preview Assets.xcassets */; };
-		E9047BA32970519A000B1885 /* BeautyPhoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BA22970519A000B1885 /* BeautyPhoraTests.swift */; };
 		E9047BAD2970519A000B1885 /* BeautyPhoraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BAC2970519A000B1885 /* BeautyPhoraUITests.swift */; };
 		E9047BAF2970519A000B1885 /* BeautyPhoraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BAE2970519A000B1885 /* BeautyPhoraUITestsLaunchTests.swift */; };
 		E9047BBC29705282000B1885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BBB29705282000B1885 /* AppDelegate.swift */; };
@@ -40,10 +38,13 @@
 		E9047BFC29708C72000B1885 /* ProductDaoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BFB29708C72000B1885 /* ProductDaoStore.swift */; };
 		E9047BFF29709A4D000B1885 /* LocaleStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BFE29709A4D000B1885 /* LocaleStoreTests.swift */; };
 		E9047C022970B8C6000B1885 /* CoreData+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047C012970B8C6000B1885 /* CoreData+.swift */; };
+		E9063F1C2972F3E400AE42DD /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9063F1B2972F3E400AE42DD /* Product.swift */; };
+		E9063F1F2972FFEA00AE42DD /* HomeViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9063F1E2972FFEA00AE42DD /* HomeViewController+UI.swift */; };
+		E9063F212973067000AE42DD /* ViewLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9063F202973067000AE42DD /* ViewLayoutProvider.swift */; };
+		E9063F23297306A500AE42DD /* SectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9063F22297306A500AE42DD /* SectionViewModel.swift */; };
 		E98C99162970D48100439B3D /* RemoteStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C99152970D48100439B3D /* RemoteStoreTests.swift */; };
 		E98C99192970E8A700439B3D /* ProductRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C99182970E8A700439B3D /* ProductRepositoryTests.swift */; };
 		E9B5A5B32971704600DCFF0A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5A5B22971704600DCFF0A /* HomeViewModel.swift */; };
-		E9B5A5B72971742200DCFF0A /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5A5B62971742200DCFF0A /* Constraints.swift */; };
 		E9B5A5BA2971747F00DCFF0A /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5A5B92971747F00DCFF0A /* ProductCollectionViewCell.swift */; };
 		E9B5A5BD2971757B00DCFF0A /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5A5BC2971757B00DCFF0A /* UIView+Constraints.swift */; };
 		E9B5A5C0297178E700DCFF0A /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5A5BF297178E700DCFF0A /* ViewModelFactory.swift */; };
@@ -80,13 +81,11 @@
 		87110A6F781D8A15C2E51913 /* Pods_BeautyPhora.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautyPhora.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1805E536EF40F6F5924D1A /* Pods-BeautyPhoraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyPhoraTests.release.xcconfig"; path = "Target Support Files/Pods-BeautyPhoraTests/Pods-BeautyPhoraTests.release.xcconfig"; sourceTree = "<group>"; };
 		E9047B8329705197000B1885 /* BeautyPhora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyPhora.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9047B8729705197000B1885 /* BeautyPhoraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyPhoraApp.swift; sourceTree = "<group>"; };
 		E9047B8E29705197000B1885 /* BeautyPhora.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BeautyPhora.xcdatamodel; sourceTree = "<group>"; };
 		E9047B942970519A000B1885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9047B962970519A000B1885 /* BeautyPhora.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeautyPhora.entitlements; sourceTree = "<group>"; };
 		E9047B982970519A000B1885 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E9047B9E2970519A000B1885 /* BeautyPhoraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeautyPhoraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9047BA22970519A000B1885 /* BeautyPhoraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyPhoraTests.swift; sourceTree = "<group>"; };
 		E9047BA82970519A000B1885 /* BeautyPhoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeautyPhoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9047BAC2970519A000B1885 /* BeautyPhoraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyPhoraUITests.swift; sourceTree = "<group>"; };
 		E9047BAE2970519A000B1885 /* BeautyPhoraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyPhoraUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -114,12 +113,15 @@
 		E9047BFB29708C72000B1885 /* ProductDaoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDaoStore.swift; sourceTree = "<group>"; };
 		E9047BFE29709A4D000B1885 /* LocaleStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleStoreTests.swift; sourceTree = "<group>"; };
 		E9047C012970B8C6000B1885 /* CoreData+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData+.swift"; sourceTree = "<group>"; };
+		E9063F1B2972F3E400AE42DD /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E9063F1E2972FFEA00AE42DD /* HomeViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UI.swift"; sourceTree = "<group>"; };
+		E9063F202973067000AE42DD /* ViewLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLayoutProvider.swift; sourceTree = "<group>"; };
+		E9063F22297306A500AE42DD /* SectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewModel.swift; sourceTree = "<group>"; };
 		E98C99152970D48100439B3D /* RemoteStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStoreTests.swift; sourceTree = "<group>"; };
 		E98C99182970E8A700439B3D /* ProductRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepositoryTests.swift; sourceTree = "<group>"; };
 		E9B5A5AF29716B4700DCFF0A /* BeautyPhora 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BeautyPhora 2.xcdatamodel"; sourceTree = "<group>"; };
 		E9B5A5B029716E7300DCFF0A /* BeautyPhora 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BeautyPhora 3.xcdatamodel"; sourceTree = "<group>"; };
 		E9B5A5B22971704600DCFF0A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		E9B5A5B62971742200DCFF0A /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		E9B5A5B92971747F00DCFF0A /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		E9B5A5BC2971757B00DCFF0A /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		E9B5A5BF297178E700DCFF0A /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
@@ -207,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				E9B5A5BB2971757000DCFF0A /* Extensions */,
-				E9B5A5B42971741400DCFF0A /* Shared */,
 				E9047B962970519A000B1885 /* BeautyPhora.entitlements */,
 				E9047BC429705D50000B1885 /* Info.plist */,
 				E9047B8629705197000B1885 /* Application */,
@@ -224,7 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				E9B5A5BE297178DE00DCFF0A /* Factory */,
-				E9047B8729705197000B1885 /* BeautyPhoraApp.swift */,
 				E9047BBD29705297000B1885 /* SceneDelegate.swift */,
 				E9047BBB29705282000B1885 /* AppDelegate.swift */,
 			);
@@ -260,7 +260,6 @@
 		E9047B932970519A000B1885 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E9B5A5B52971741B00DCFF0A /* Constraints */,
 				E9047B942970519A000B1885 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -279,7 +278,6 @@
 			children = (
 				E9EA5F8D2972C1FC002625EE /* PresentationTests */,
 				E9047BD82970684E000B1885 /* DataTests */,
-				E9047BA22970519A000B1885 /* BeautyPhoraTests.swift */,
 			);
 			path = BeautyPhoraTests;
 			sourceTree = "<group>";
@@ -296,6 +294,8 @@
 		E9047BBF297052A6000B1885 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E9063F1D2972FFD900AE42DD /* Shared */,
+				E9063F1A2972F3D600AE42DD /* Model */,
 				E9B5A5B82971746B00DCFF0A /* Components */,
 				E9B5A5B129716F9100DCFF0A /* ViewModel */,
 				E9047BC2297052B8000B1885 /* View */,
@@ -473,6 +473,23 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		E9063F1A2972F3D600AE42DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9063F1B2972F3E400AE42DD /* Product.swift */,
+				E9063F22297306A500AE42DD /* SectionViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E9063F1D2972FFD900AE42DD /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E9063F1E2972FFEA00AE42DD /* HomeViewController+UI.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		E98C99172970E89900439B3D /* RepositoryTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,25 +506,11 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		E9B5A5B42971741400DCFF0A /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		E9B5A5B52971741B00DCFF0A /* Constraints */ = {
-			isa = PBXGroup;
-			children = (
-				E9B5A5B62971742200DCFF0A /* Constraints.swift */,
-			);
-			path = Constraints;
-			sourceTree = "<group>";
-		};
 		E9B5A5B82971746B00DCFF0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				E9B5A5B92971747F00DCFF0A /* ProductCollectionViewCell.swift */,
+				E9063F202973067000AE42DD /* ViewLayoutProvider.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -624,7 +627,7 @@
 				};
 			};
 			buildConfigurationList = E9047B7E29705197000B1885 /* Build configuration list for PBXProject "BeautyPhora" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -813,12 +816,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9047BED29707DD1000B1885 /* ProductRemoteStoreProtocol.swift in Sources */,
-				E9047B8829705197000B1885 /* BeautyPhoraApp.swift in Sources */,
-				E9B5A5B72971742200DCFF0A /* Constraints.swift in Sources */,
 				E9047B8F29705197000B1885 /* BeautyPhora.xcdatamodeld in Sources */,
 				E9047BCE29705E17000B1885 /* NetworkProviderProtocol.swift in Sources */,
 				E9047BCC29705DF8000B1885 /* DataServiceProvider.swift in Sources */,
 				E9B5A5BA2971747F00DCFF0A /* ProductCollectionViewCell.swift in Sources */,
+				E9063F23297306A500AE42DD /* SectionViewModel.swift in Sources */,
 				E9047BE029706B3A000B1885 /* PProduct.swift in Sources */,
 				E9047BBC29705282000B1885 /* AppDelegate.swift in Sources */,
 				E9047BFA29708A5F000B1885 /* ProductDaoStoreProtocol.swift in Sources */,
@@ -832,9 +834,12 @@
 				E9047BD22970654A000B1885 /* Requester.swift in Sources */,
 				E9047BE429706C05000B1885 /* ImagesURLDTO.swift in Sources */,
 				E9047BD42970656A000B1885 /* Endpoint.swift in Sources */,
+				E9063F1F2972FFEA00AE42DD /* HomeViewController+UI.swift in Sources */,
 				E9047BBE29705297000B1885 /* SceneDelegate.swift in Sources */,
+				E9063F1C2972F3E400AE42DD /* Product.swift in Sources */,
 				E9047BEB29707DC3000B1885 /* ProductRemoteStore.swift in Sources */,
 				E9047BE229706BE1000B1885 /* BrandDTO.swift in Sources */,
+				E9063F212973067000AE42DD /* ViewLayoutProvider.swift in Sources */,
 				E9B5A5C229717C7900DCFF0A /* UIImageView+Loader.swift in Sources */,
 				E9047BF12970808D000B1885 /* ProductRepository.swift in Sources */,
 				E9047C022970B8C6000B1885 /* CoreData+.swift in Sources */,
@@ -846,7 +851,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9047BA32970519A000B1885 /* BeautyPhoraTests.swift in Sources */,
 				E9047BDD2970699D000B1885 /* StubsProvider.swift in Sources */,
 				E9047BDA297068B3000B1885 /* RequesterTests.swift in Sources */,
 				E9EA5F8F2972C211002625EE /* HomeViewModelTests.swift in Sources */,

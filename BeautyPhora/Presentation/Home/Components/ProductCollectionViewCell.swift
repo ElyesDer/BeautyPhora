@@ -75,10 +75,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        //        self.debugView()
+        
         setupViews()
         setupConstraint()
-        //        setupShadowEffect()
     }
     
     fileprivate func setupViews() {

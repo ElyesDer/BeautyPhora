@@ -18,6 +18,11 @@ extension UIView {
         heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
     }
     
+    func center(with view: UIView) {
+        centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+    
     func anchor(top: NSLayoutYAxisAnchor? = nil, leading: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
         
