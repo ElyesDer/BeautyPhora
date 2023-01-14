@@ -8,13 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0ED7DCFA56C80D1E7B3D663D /* Pods_BeautyPhora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87110A6F781D8A15C2E51913 /* Pods_BeautyPhora.framework */; };
-		3BC1F7D79712BAF99C688970 /* Pods_BeautyPhora_BeautyPhoraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D37C57616497545322A498 /* Pods_BeautyPhora_BeautyPhoraUITests.framework */; };
 		7CD9F6F6FE5A5AB3D554AFDB /* Pods_BeautyPhoraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA57967D20AFAEC622A21F3 /* Pods_BeautyPhoraTests.framework */; };
 		E9047B8F29705197000B1885 /* BeautyPhora.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9047B8D29705197000B1885 /* BeautyPhora.xcdatamodeld */; };
 		E9047B952970519A000B1885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9047B942970519A000B1885 /* Assets.xcassets */; };
 		E9047B992970519A000B1885 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9047B982970519A000B1885 /* Preview Assets.xcassets */; };
-		E9047BAD2970519A000B1885 /* BeautyPhoraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BAC2970519A000B1885 /* BeautyPhoraUITests.swift */; };
-		E9047BAF2970519A000B1885 /* BeautyPhoraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BAE2970519A000B1885 /* BeautyPhoraUITestsLaunchTests.swift */; };
 		E9047BBC29705282000B1885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BBB29705282000B1885 /* AppDelegate.swift */; };
 		E9047BBE29705297000B1885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BBD29705297000B1885 /* SceneDelegate.swift */; };
 		E9047BC1297052B5000B1885 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9047BC0297052B5000B1885 /* HomeViewController.swift */; };
@@ -61,13 +58,6 @@
 			remoteGlobalIDString = E9047B8229705197000B1885;
 			remoteInfo = BeautyPhora;
 		};
-		E9047BA92970519A000B1885 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E9047B7B29705197000B1885 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E9047B8229705197000B1885;
-			remoteInfo = BeautyPhora;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -86,9 +76,6 @@
 		E9047B962970519A000B1885 /* BeautyPhora.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeautyPhora.entitlements; sourceTree = "<group>"; };
 		E9047B982970519A000B1885 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E9047B9E2970519A000B1885 /* BeautyPhoraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeautyPhoraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9047BA82970519A000B1885 /* BeautyPhoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeautyPhoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9047BAC2970519A000B1885 /* BeautyPhoraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyPhoraUITests.swift; sourceTree = "<group>"; };
-		E9047BAE2970519A000B1885 /* BeautyPhoraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyPhoraUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E9047BBB29705282000B1885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9047BBD29705297000B1885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E9047BC0297052B5000B1885 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -148,14 +135,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9047BA52970519A000B1885 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3BC1F7D79712BAF99C688970 /* Pods_BeautyPhora_BeautyPhoraUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -188,7 +167,6 @@
 				E9EA5F902972C809002625EE /* readme.md */,
 				E9047B8529705197000B1885 /* BeautyPhora */,
 				E9047BA12970519A000B1885 /* BeautyPhoraTests */,
-				E9047BAB2970519A000B1885 /* BeautyPhoraUITests */,
 				E9047B8429705197000B1885 /* Products */,
 				1A339528DA177A025E5D8CA4 /* Pods */,
 				2CCEA26AC31C17B73B082FE1 /* Frameworks */,
@@ -200,7 +178,6 @@
 			children = (
 				E9047B8329705197000B1885 /* BeautyPhora.app */,
 				E9047B9E2970519A000B1885 /* BeautyPhoraTests.xctest */,
-				E9047BA82970519A000B1885 /* BeautyPhoraUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -280,15 +257,6 @@
 				E9047BD82970684E000B1885 /* DataTests */,
 			);
 			path = BeautyPhoraTests;
-			sourceTree = "<group>";
-		};
-		E9047BAB2970519A000B1885 /* BeautyPhoraUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E9047BAC2970519A000B1885 /* BeautyPhoraUITests.swift */,
-				E9047BAE2970519A000B1885 /* BeautyPhoraUITestsLaunchTests.swift */,
-			);
-			path = BeautyPhoraUITests;
 			sourceTree = "<group>";
 		};
 		E9047BBF297052A6000B1885 /* Home */ = {
@@ -583,26 +551,6 @@
 			productReference = E9047B9E2970519A000B1885 /* BeautyPhoraTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E9047BA72970519A000B1885 /* BeautyPhoraUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E9047BB82970519A000B1885 /* Build configuration list for PBXNativeTarget "BeautyPhoraUITests" */;
-			buildPhases = (
-				4D1580E7E3FE8F0AC4621FC1 /* [CP] Check Pods Manifest.lock */,
-				E9047BA42970519A000B1885 /* Sources */,
-				E9047BA52970519A000B1885 /* Frameworks */,
-				E9047BA62970519A000B1885 /* Resources */,
-				7F9836EAA37BC8E8733CCBD8 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E9047BAA2970519A000B1885 /* PBXTargetDependency */,
-			);
-			name = BeautyPhoraUITests;
-			productName = BeautyPhoraUITests;
-			productReference = E9047BA82970519A000B1885 /* BeautyPhoraUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -617,10 +565,6 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					E9047B9D2970519A000B1885 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = E9047B8229705197000B1885;
-					};
-					E9047BA72970519A000B1885 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = E9047B8229705197000B1885;
 					};
@@ -641,7 +585,6 @@
 			targets = (
 				E9047B8229705197000B1885 /* BeautyPhora */,
 				E9047B9D2970519A000B1885 /* BeautyPhoraTests */,
-				E9047BA72970519A000B1885 /* BeautyPhoraUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -661,13 +604,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9EA5F912972C809002625EE /* readme.md in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9047BA62970519A000B1885 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,45 +647,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4D1580E7E3FE8F0AC4621FC1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BeautyPhora-BeautyPhoraUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7F9836EAA37BC8E8733CCBD8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BeautyPhora-BeautyPhoraUITests/Pods-BeautyPhora-BeautyPhoraUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BeautyPhora-BeautyPhoraUITests/Pods-BeautyPhora-BeautyPhoraUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeautyPhora-BeautyPhoraUITests/Pods-BeautyPhora-BeautyPhoraUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B45A421440E802A59D16D54B /* [CP] Embed Pods Frameworks */ = {
@@ -861,15 +758,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9047BA42970519A000B1885 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9047BAD2970519A000B1885 /* BeautyPhoraUITests.swift in Sources */,
-				E9047BAF2970519A000B1885 /* BeautyPhoraUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -877,11 +765,6 @@
 			isa = PBXTargetDependency;
 			target = E9047B8229705197000B1885 /* BeautyPhora */;
 			targetProxy = E9047B9F2970519A000B1885 /* PBXContainerItemProxy */;
-		};
-		E9047BAA2970519A000B1885 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E9047B8229705197000B1885 /* BeautyPhora */;
-			targetProxy = E9047BA92970519A000B1885 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1127,52 +1010,6 @@
 			};
 			name = Release;
 		};
-		E9047BB92970519A000B1885 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60AB9F1CD7DE3875D6518750 /* Pods-BeautyPhora-BeautyPhoraUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 75K654T5D3;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.homework.BeautyPhoraUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BeautyPhora;
-			};
-			name = Debug;
-		};
-		E9047BBA2970519A000B1885 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1034F55851ADD13D744377AA /* Pods-BeautyPhora-BeautyPhoraUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 75K654T5D3;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.homework.BeautyPhoraUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BeautyPhora;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1199,15 +1036,6 @@
 			buildConfigurations = (
 				E9047BB62970519A000B1885 /* Debug */,
 				E9047BB72970519A000B1885 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E9047BB82970519A000B1885 /* Build configuration list for PBXNativeTarget "BeautyPhoraUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E9047BB92970519A000B1885 /* Debug */,
-				E9047BBA2970519A000B1885 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
