@@ -53,22 +53,17 @@ class ProductDaoStore: BaseDao, ProductDaoStoreProtocol {
                 try? self.insert(product: product)
             }
         }
-        
     }
     
-    func removeAll(in entity : String) {
+    func removeAll(in entity: String) {
         let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
         do {
             try self.container.viewContext.execute(deleteRequest)
             try self.container.viewContext.save()
         } catch {
-            print ("There was an error")
+            assertionFailure("There was an error in removeAll function")
         }
-    }
-    
-    func remove(with id: Int) {
-        print("removing \(id)")
     }
     
     func getProducts() throws -> PProducts {

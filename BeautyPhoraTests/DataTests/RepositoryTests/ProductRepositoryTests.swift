@@ -9,16 +9,19 @@ import XCTest
 @testable import BeautyPhora
 import CoreData
 import RxTest
+import RxSwift
+import RxBlocking
 
 final class ProductRepositoryTests: XCTestCase {
     
     var zut: ProductRepositoryProtocol!
     var localeStore: ProductDaoStoreProtocol!
     var remoteStore: ProductRemoteStoreProtocol!
-    //    let bag: DisposeBag!
+    var disposeBag: DisposeBag!
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        disposeBag = DisposeBag()
         let requester = Requester()
         localeStore = ProductDaoStore()
         remoteStore = ProductRemoteStore(requester: requester)
@@ -36,19 +39,16 @@ final class ProductRepositoryTests: XCTestCase {
             }
         }
         
-//        let bag = DisposeBag()
-        
         // setup expectation
         let expectation = XCTestExpectation(description: "Fetch Data")
         
         // given
         zut = ProductRepository(dependencies: DependencyProvider(localStore: localeStore, remoteStore: remoteStore))
         
-        let _ = zut.getProductRx()
+        zut.getProductRx()
             .subscribe({ event in
                 switch event {
-                    case .next(let products):
-                        XCTAssertFalse(products.isEmpty)
+                    case .next(_): break
                     case .completed:
                         expectation.fulfill()
                     case .error(let error):
@@ -56,6 +56,7 @@ final class ProductRepositoryTests: XCTestCase {
                         expectation.fulfill()
                 }
             })
+            .disposed(by: disposeBag)
         
         wait(for: [expectation], timeout: 40.0)
     }

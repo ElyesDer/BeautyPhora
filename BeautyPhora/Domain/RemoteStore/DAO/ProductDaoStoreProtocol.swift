@@ -16,5 +16,5 @@ protocol ProductDaoStoreProtocol {
     func getProduct(id: Int) throws -> PProduct
     func insert(product: PProduct) throws
     func performUpdates(with products: Products)
-    func remove(with id: Int)
+    func removeAll(in entity: String)
 }
