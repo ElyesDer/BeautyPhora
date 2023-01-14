@@ -11,13 +11,13 @@ import Foundation
 
 typealias Products = [ProductDTO]
 
-struct ProductDTO: PProduct {
+struct ProductDTO: ProductProtocol {
     var id: String
     var name: String
     var description: String
     var price: Int
-    var image: PImagesURL
-    var brand: PBrand
+    var image: ImagesProtocol
+    var brand: BrandProtocol
     var isProductSet: Bool
     var isSpecialBrand: Bool
 }
@@ -33,7 +33,6 @@ extension ProductDTO {
         case brand = "c_brand"
         case isProductSet = "is_productSet"
         case isSpecialBrand = "is_special_brand"
-        
     }
     
     init(from decoder: Decoder) throws {

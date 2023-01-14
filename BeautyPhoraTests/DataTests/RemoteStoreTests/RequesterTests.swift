@@ -47,8 +47,12 @@ final class RequesterTests: XCTestCase {
         requester = Requester(urlSession: urlSession)
         
         // execute
-        guard let products = try? await requester.request(from: endpoint, of: Products.self) else {
-            XCTFail("Could not parse request team")
+        guard let products = try requester
+            .request(from: endpoint, of: Products.self)
+            .asObservable()
+            .toBlocking()
+            .first() else {
+            XCTFail("Failed to get products")
             return
         }
         
@@ -87,7 +91,12 @@ final class RequesterTests: XCTestCase {
         
         // execute
         do {
-            _ = try await requester.request(from: endpoint, of: Products.self)
+            _ = try requester
+                .request(from: endpoint, of: Products.self)
+                .asObservable()
+                .toBlocking()
+                .first()
+            
             XCTFail("Request should not succeed")
         } catch {
             guard let error = error as? Requester.ServiceError else {
@@ -101,14 +110,5 @@ final class RequesterTests: XCTestCase {
                 XCTFail("ServiceError.statusCodeError different fron 404")
             }
         }
-        
     }
-    
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

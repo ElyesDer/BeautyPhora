@@ -46,7 +46,7 @@ class ProductDaoStore: BaseDao, ProductDaoStoreProtocol {
         self.container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
     
-    func performUpdates(with products: Products) {
+    func performUpdates(with products: ProductsProtocol) {
         removeAll(in: "Product")
         DispatchQueue.main.async {
             products.forEach { product in
@@ -60,13 +60,13 @@ class ProductDaoStore: BaseDao, ProductDaoStoreProtocol {
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
         do {
             try self.container.viewContext.execute(deleteRequest)
-            try self.container.viewContext.save()
+            try self.container.viewContext.saveIfNeeded()
         } catch {
             assertionFailure("There was an error in removeAll function")
         }
     }
     
-    func getProducts() throws -> PProducts {
+    func getProducts() throws -> ProductsProtocol {
         // perform db fetch
         let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
         return try self.container.viewContext
@@ -76,7 +76,7 @@ class ProductDaoStore: BaseDao, ProductDaoStoreProtocol {
             }
     }
     
-    func getProduct(id: Int) throws -> any PProduct {
+    func getProduct(id: Int) throws -> any ProductProtocol {
         let fetchRequest: NSFetchRequest<Product> = NSFetchRequest(entityName: "Product")
         fetchRequest.predicate = NSPredicate(format: "id == %i", id)
         fetchRequest.fetchLimit = 1
@@ -86,7 +86,7 @@ class ProductDaoStore: BaseDao, ProductDaoStoreProtocol {
         return self.decode(object: product)
     }
     
-    func insert(product: any PProduct) throws {
+    func insert(product: any ProductProtocol) throws {
         var localProduct: Product = .init(context: self.container.viewContext)
         guard let dto = product as? ProductDTO else { throw NSError() }
         encode(entity: dto, into: &localProduct)

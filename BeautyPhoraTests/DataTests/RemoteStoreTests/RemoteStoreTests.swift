@@ -27,8 +27,12 @@ final class RemoteStoreTests: XCTestCase {
         let endpoint = Endpoint(method: .get, endURL: APIProvider.items)
         
         // execute
-        guard let products = try? await provider.request(from: endpoint, of: Products.self) else {
-            XCTFail("Could not parse request")
+        guard let products = try provider
+            .request(from: endpoint, of: Products.self)
+            .asObservable()
+            .toBlocking()
+            .first() else {
+            XCTFail("Failed to get products")
             return
         }
         

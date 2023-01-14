@@ -29,11 +29,11 @@ final class ProductRepositoryTests: XCTestCase {
     
     func test_get_all_locale_rx() async throws {
         
-        class DependencyProvider: HasProductDaoStoreProtocol, HasProductRemoteStoreProtocol {
-            var localStore: BeautyPhora.ProductDaoStoreProtocol
-            var remoteStore: BeautyPhora.ProductRemoteStoreProtocol
+        class DependencyProvider: ProductLocalStoreProviderProtocol, ProductRemoteStoreProviderProtocol {
+            var localStore: ProductDaoStoreProtocol
+            var remoteStore: ProductRemoteStoreProtocol
             
-            init(localStore: BeautyPhora.ProductDaoStoreProtocol, remoteStore: BeautyPhora.ProductRemoteStoreProtocol) {
+            init(localStore: ProductDaoStoreProtocol, remoteStore: ProductRemoteStoreProtocol) {
                 self.localStore = localStore
                 self.remoteStore = remoteStore
             }
@@ -45,7 +45,7 @@ final class ProductRepositoryTests: XCTestCase {
         // given
         zut = ProductRepository(dependencies: DependencyProvider(localStore: localeStore, remoteStore: remoteStore))
         
-        zut.getProductRx()
+        zut.getProduct()
             .subscribe({ event in
                 switch event {
                     case .next(_): break
@@ -60,12 +60,4 @@ final class ProductRepositoryTests: XCTestCase {
         
         wait(for: [expectation], timeout: 40.0)
     }
-    
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

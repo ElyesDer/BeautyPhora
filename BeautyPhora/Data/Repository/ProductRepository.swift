@@ -8,27 +8,19 @@
 import Foundation
 import RxSwift
 
-class ProductRepository: ProductRepositoryProtocol, HasProductRemoteStoreProtocol, HasProductDaoStoreProtocol {
+class ProductRepository: ProductRepositoryProtocol, ProductRemoteStoreProviderProtocol, ProductLocalStoreProviderProtocol {
     
     var localStore: ProductDaoStoreProtocol
     var remoteStore: ProductRemoteStoreProtocol
     
-    typealias Dependencies = HasProductDaoStoreProtocol & HasProductRemoteStoreProtocol
+    typealias Dependencies = ProductLocalStoreProviderProtocol & ProductRemoteStoreProviderProtocol
     
     init(dependencies: Dependencies) {
         self.localStore = dependencies.localStore
         self.remoteStore = dependencies.remoteStore
     }
     
-    func getProducts() async throws -> PProducts {
-        
-        _ = try localStore.getProducts()
-        let updatedProducts = try await remoteStore.getProducts()
-        
-        return updatedProducts
-    }
-    
-    func getProductRx() -> Observable<PProducts> {
+    func getProduct() -> Observable<ProductsProtocol> {
         let localData = (try? localStore.getProducts()) ?? []
         return Observable.of(
             Observable.create({ observer in
