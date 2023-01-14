@@ -13,6 +13,5 @@ protocol HasProductRepositoryProtocol {
 }
 
 protocol ProductRepositoryProtocol {
-    func getProducts() async throws -> PProducts
-    func getProductRx() -> Observable<PProducts>
+    func getProduct() -> Observable<PProducts>
 }

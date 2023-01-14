@@ -50,7 +50,7 @@ class MockProductRepository: ProductRepositoryProtocol {
         return []
     }
     
-    func getProductRx() -> Observable<PProducts> {
+    func getProduct() -> Observable<PProducts> {
         return .create { observer in
             observer.onNext(StubProvider.instance.products)
             observer.onCompleted()

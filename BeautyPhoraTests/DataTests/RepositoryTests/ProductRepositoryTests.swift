@@ -45,7 +45,7 @@ final class ProductRepositoryTests: XCTestCase {
         // given
         zut = ProductRepository(dependencies: DependencyProvider(localStore: localeStore, remoteStore: remoteStore))
         
-        zut.getProductRx()
+        zut.getProduct()
             .subscribe({ event in
                 switch event {
                     case .next(_): break

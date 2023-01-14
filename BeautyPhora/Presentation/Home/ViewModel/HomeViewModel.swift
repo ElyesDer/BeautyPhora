@@ -37,7 +37,7 @@ class HomeViewModel: HasProductRepositoryProtocol {
 extension HomeViewModel {
     func fetchProduct() {
         self.productRepository
-            .getProductRx()
+            .getProduct()
             .compactMap { $0 as? Products }
             .subscribe({ event in
                 switch event {
