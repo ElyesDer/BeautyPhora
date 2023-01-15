@@ -43,6 +43,8 @@
 		E9063F282973319100AE42DD /* ReusableSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9063F272973319100AE42DD /* ReusableSectionView.swift */; };
 		E98C99162970D48100439B3D /* RemoteStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C99152970D48100439B3D /* RemoteStoreTests.swift */; };
 		E98C99192970E8A700439B3D /* ProductRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C99182970E8A700439B3D /* ProductRepositoryTests.swift */; };
+		E9957C4C2973F4680008437E /* ProductUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9957C4B2973F4680008437E /* ProductUseCases.swift */; };
+		E9957C4E2973F8B50008437E /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9957C4D2973F8B50008437E /* UIViewController+Alert.swift */; };
 		E9B5A5B32971704600DCFF0A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5A5B22971704600DCFF0A /* HomeViewModel.swift */; };
 		E9B5A5BA2971747F00DCFF0A /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5A5B92971747F00DCFF0A /* ProductCollectionViewCell.swift */; };
 		E9B5A5BD2971757B00DCFF0A /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5A5BC2971757B00DCFF0A /* UIView+Constraints.swift */; };
@@ -110,6 +112,8 @@
 		E9063F272973319100AE42DD /* ReusableSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableSectionView.swift; sourceTree = "<group>"; };
 		E98C99152970D48100439B3D /* RemoteStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStoreTests.swift; sourceTree = "<group>"; };
 		E98C99182970E8A700439B3D /* ProductRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepositoryTests.swift; sourceTree = "<group>"; };
+		E9957C4B2973F4680008437E /* ProductUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductUseCases.swift; sourceTree = "<group>"; };
+		E9957C4D2973F8B50008437E /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		E9B5A5AF29716B4700DCFF0A /* BeautyPhora 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BeautyPhora 2.xcdatamodel"; sourceTree = "<group>"; };
 		E9B5A5B029716E7300DCFF0A /* BeautyPhora 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BeautyPhora 3.xcdatamodel"; sourceTree = "<group>"; };
 		E9B5A5B22971704600DCFF0A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -316,6 +320,7 @@
 		E9047BC829705DD5000B1885 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				E9957C4A2973F4460008437E /* UseCases */,
 				E9047BF829708A4D000B1885 /* LocalStore */,
 				E9063F2429731EF800AE42DD /* Repositories */,
 				E9047BDE29706A5A000B1885 /* Entities */,
@@ -451,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				E9063F1E2972FFEA00AE42DD /* HomeViewController+UI.swift */,
+				E9957C4D2973F8B50008437E /* UIViewController+Alert.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -469,6 +475,14 @@
 				E98C99182970E8A700439B3D /* ProductRepositoryTests.swift */,
 			);
 			path = RepositoryTests;
+			sourceTree = "<group>";
+		};
+		E9957C4A2973F4460008437E /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				E9957C4B2973F4680008437E /* ProductUseCases.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		E9B5A5B129716F9100DCFF0A /* ViewModel */ = {
@@ -731,7 +745,9 @@
 				E9047BFC29708C72000B1885 /* ProductDaoStore.swift in Sources */,
 				E9B5A5C0297178E700DCFF0A /* ViewModelFactory.swift in Sources */,
 				E9047BF5297080B6000B1885 /* ProductRepositoryProtocol.swift in Sources */,
+				E9957C4C2973F4680008437E /* ProductUseCases.swift in Sources */,
 				E9047BD029705EB1000B1885 /* APIProvider.swift in Sources */,
+				E9957C4E2973F8B50008437E /* UIViewController+Alert.swift in Sources */,
 				E9047BC1297052B5000B1885 /* HomeViewController.swift in Sources */,
 				E9B5A5BD2971757B00DCFF0A /* UIView+Constraints.swift in Sources */,
 				E9B5A5B32971704600DCFF0A /* HomeViewModel.swift in Sources */,

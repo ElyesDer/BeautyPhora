@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxRelay
 
-protocol HomeViewModelProtocol: ProductRepositoryProviderProtocol {
+protocol HomeViewModelProtocol: ProductUseCasesProviderProtocol {
     var productList: BehaviorRelay<Products> { get }
     var favoriteProductList: BehaviorRelay<Products> { get }
     var state: BehaviorRelay<ProductListViewModelState> { get }
@@ -19,7 +19,7 @@ protocol HomeViewModelProtocol: ProductRepositoryProviderProtocol {
 
 class HomeViewModel: HomeViewModelProtocol {
     
-    var productRepository: ProductRepositoryProtocol
+    var productUsesCases: ProductUseCasesProtocol
     
     private let disposeBag = DisposeBag()
     private(set) var productList = BehaviorRelay<Products>(value: [])
@@ -28,8 +28,8 @@ class HomeViewModel: HomeViewModelProtocol {
     var state = BehaviorRelay<ProductListViewModelState>(value: .idle)
     var sectionModels = BehaviorRelay<[SectionViewModel]>(value: [])
     
-    init(productRepository: ProductRepositoryProtocol) {
-        self.productRepository = productRepository
+    init(productUsesCases: ProductUseCasesProtocol) {
+        self.productUsesCases = productUsesCases
         
         // fetch
         fetchProduct()
@@ -38,11 +38,11 @@ class HomeViewModel: HomeViewModelProtocol {
 
 extension HomeViewModel {
     func fetchProduct() {
-        self.productRepository
-            .getProduct()
+        self.productUsesCases
+            .getProducts()
             .compactMap { $0 as? Products }
-            .subscribe({ event in
-                switch event {
+            .subscribe { observer in
+                switch observer {
                     case .next(let products):
                         self.productList
                             .accept(products.filter { !$0.isSpecialBrand } )
@@ -64,7 +64,7 @@ extension HomeViewModel {
                     case .error(let error):
                         self.state.accept(.error(error.localizedDescription))
                 }
-            })
+            }
             .disposed(by: disposeBag)
     }
 }
