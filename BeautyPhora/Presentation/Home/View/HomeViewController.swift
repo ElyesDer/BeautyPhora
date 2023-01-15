@@ -79,6 +79,9 @@ extension HomeViewController {
                                 self?.activityIndicationView.stopAnimating()
                             case .error:
                                 self?.activityIndicationView.stopAnimating()
+                                self?.presentAlert(withTitle: "Error Happened", message: "Error while loading content", action: .init(title: "Reload", style: .default, handler: { _ in
+                                    self?.viewModel.fetchProduct()
+                                }))
                         }
                     default:
                         break

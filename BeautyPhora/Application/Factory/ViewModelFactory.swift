@@ -22,6 +22,7 @@ class ViewModelFactory: ViewModelFactoryProtocol {
     
     func buildHomeViewModel() -> HomeViewModel {
         let repository = ProductRepository(dependencies: self)
-        return HomeViewModel(productRepository: repository)
+        let productUseCases = ProductUseCases(productRepository: repository)
+        return HomeViewModel(productUsesCases: productUseCases)
     }
 }
