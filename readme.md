@@ -18,7 +18,7 @@ Integration Tests using custom mocks to test repositories and View models.
 These tests can be run by navigating to the Tests folder in Xcode and running the BeautyPhoraTests target.
 
 ## Requirements
-iOS 14.0+
+iOS 15.0+ | Because of one line --> `.formatted(.currency(code: "EUR"))` | tx Apple
 Xcode 13+
 
 ## Overview
