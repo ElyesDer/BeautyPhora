@@ -14,6 +14,7 @@ class HomeViewModelTests: XCTestCase {
     
     var homeViewModel: HomeViewModel!
     var mockProductRepository: MockProductRepository!
+    var productUseCase: ProductUseCases!
     var disposeBag: DisposeBag!
     
     override func setUp() {
@@ -21,7 +22,8 @@ class HomeViewModelTests: XCTestCase {
         
         disposeBag = DisposeBag()
         mockProductRepository = MockProductRepository()
-        homeViewModel = HomeViewModel(productRepository: mockProductRepository)
+        productUseCase = ProductUseCases(productRepository: mockProductRepository)
+        homeViewModel = HomeViewModel(productUsesCases: ProductUseCases(productRepository: mockProductRepository))
     }
     
     func test_FetchNormalProduct() {

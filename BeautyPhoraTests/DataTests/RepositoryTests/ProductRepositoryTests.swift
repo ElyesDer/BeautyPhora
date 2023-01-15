@@ -14,7 +14,7 @@ import RxBlocking
 
 final class ProductRepositoryTests: XCTestCase {
     
-    var zut: ProductRepositoryProtocol!
+    var sut: ProductRepositoryProtocol!
     var localeStore: ProductDaoStoreProtocol!
     var remoteStore: ProductRemoteStoreProtocol!
     var disposeBag: DisposeBag!
@@ -43,9 +43,9 @@ final class ProductRepositoryTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Fetch Data")
         
         // given
-        zut = ProductRepository(dependencies: DependencyProvider(localStore: localeStore, remoteStore: remoteStore))
+        sut = ProductRepository(dependencies: DependencyProvider(localStore: localeStore, remoteStore: remoteStore))
         
-        zut.getProduct()
+        sut.getProduct()
             .subscribe({ event in
                 switch event {
                     case .next(_): break
