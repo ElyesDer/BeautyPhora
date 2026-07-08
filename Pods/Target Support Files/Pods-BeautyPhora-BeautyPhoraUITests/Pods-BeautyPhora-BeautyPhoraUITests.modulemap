@@ -1,0 +1,6 @@
+framework module Pods_BeautyPhora_BeautyPhoraUITests {
+  umbrella header "Pods-BeautyPhora-BeautyPhoraUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
